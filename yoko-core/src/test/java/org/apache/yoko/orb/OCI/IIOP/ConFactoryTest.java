@@ -17,8 +17,8 @@ import org.omg.IOP.TAG_CSI_SEC_MECH_LIST;
 import org.omg.IOP.TAG_INTERNET_IOP;
 import org.omg.IOP.TaggedComponent;
 import org.omg.IOP.TaggedProfile;
-import testify.hex.HexParser;
-import testify.jupiter.annotation.iiop.ConfigureOrb;
+import org.apache.yoko.testify.hex.HexParser;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb;
 
 import static java.util.Arrays.stream;
 import static java.util.stream.Collectors.joining;
@@ -27,7 +27,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.arrayWithSize;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-import static testify.hex.HexBuilder.buildHex;
+import static org.apache.yoko.testify.hex.HexBuilder.buildHex;
 
 @ConfigureOrb
 @ExtendWith(MockitoExtension.class)

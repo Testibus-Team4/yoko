@@ -20,7 +20,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
-import static testify.hex.HexParser.HEX_DUMP;
+import static org.apache.yoko.testify.hex.HexParser.HEX_DUMP;
 
 /**
  * Test writing Java values directly to and reading them back from CDR streams.

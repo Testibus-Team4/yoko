@@ -16,7 +16,7 @@
  */
 package versioned;
 
-import testify.bus.Bus;
+import org.apache.yoko.testify.bus.Bus;
 
 import java.rmi.RemoteException;
 

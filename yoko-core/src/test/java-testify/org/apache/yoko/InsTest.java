@@ -41,8 +41,8 @@ import org.omg.PortableServer.POAManager;
 import test.ins.URLTest.IIOPAddress;
 import test.ins.URLTest.IIOPAddressHelper;
 import test.ins.URLTest.IIOPAddress_impl;
-import testify.bus.Bus;
-import testify.jupiter.annotation.iiop.ConfigureServer;
+import org.apache.yoko.testify.bus.Bus;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer;
 
 import java.util.stream.IntStream;
 import java.util.stream.Stream;

@@ -30,13 +30,13 @@ import org.omg.CosNaming.NamingContextHelper;
 import org.omg.PortableServer.POA;
 import org.omg.PortableServer.Servant;
 import org.opentest4j.AssertionFailedError;
-import testify.bus.Bus;
-import testify.jupiter.annotation.iiop.ConfigureOrb;
-import testify.jupiter.annotation.iiop.ConfigureServer;
-import testify.jupiter.annotation.iiop.ConfigureServer.BeforeServer;
-import testify.jupiter.annotation.iiop.ConfigureServer.NameServiceStub;
-import testify.jupiter.annotation.iiop.ConfigureServer.Separation;
-import testify.util.Maps;
+import org.apache.yoko.testify.bus.Bus;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.BeforeServer;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.NameServiceStub;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.Separation;
+import org.apache.yoko.testify.util.Maps;
 
 import javax.rmi.CORBA.Tie;
 import javax.rmi.CORBA.Util;
@@ -56,8 +56,8 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.fail;
-import static testify.jupiter.annotation.iiop.ConfigureOrb.NameService.READ_WRITE;
-import static testify.util.Names.toCosName;
+import static org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb.NameService.READ_WRITE;
+import static org.apache.yoko.testify.util.Names.toCosName;
 
 @ConfigureServer(
         separation = Separation.INTER_ORB,

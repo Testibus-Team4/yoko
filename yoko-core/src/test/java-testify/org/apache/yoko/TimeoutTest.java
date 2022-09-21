@@ -20,13 +20,13 @@ import acme.Processor;
 import acme.ProcessorImpl;
 import org.junit.jupiter.api.Test;
 import org.omg.CORBA.NO_RESPONSE;
-import testify.jupiter.annotation.iiop.ConfigureOrb;
-import testify.jupiter.annotation.iiop.ConfigureServer;
-import testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
 
 import java.rmi.RemoteException;
 
-import static testify.expect.ExceptionExpectation.expect;
+import static org.apache.yoko.testify.expect.ExceptionExpectation.expect;
 
 @ConfigureServer(
         clientOrb = @ConfigureOrb(props = "yoko.orb.policy.request_timeout=1")

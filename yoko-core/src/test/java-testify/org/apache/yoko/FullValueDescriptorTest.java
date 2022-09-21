@@ -35,14 +35,14 @@ import org.omg.CosNaming.NamingContextHelper;
 import org.omg.PortableServer.POA;
 import org.omg.PortableServer.POAHelper;
 import org.omg.PortableServer.Servant;
-import testify.bus.Bus;
-import testify.jupiter.annotation.Tracing;
-import testify.jupiter.annotation.iiop.ConfigureOrb;
-import testify.jupiter.annotation.iiop.ConfigureServer;
-import testify.jupiter.annotation.iiop.ConfigureServer.BeforeServer;
-import testify.jupiter.annotation.iiop.ConfigureServer.NameServiceStub;
-import testify.jupiter.annotation.iiop.ConfigureServer.Separation;
-import testify.jupiter.annotation.logging.Logging;
+import org.apache.yoko.testify.bus.Bus;
+import org.apache.yoko.testify.jupiter.annotation.Tracing;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.BeforeServer;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.NameServiceStub;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.Separation;
+import org.apache.yoko.testify.jupiter.annotation.logging.Logging;
 
 import javax.rmi.CORBA.Tie;
 import javax.rmi.CORBA.Util;
@@ -52,8 +52,8 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.Constructor;
 
-import static testify.jupiter.annotation.iiop.ConfigureOrb.NameService.READ_WRITE;
-import static testify.jupiter.annotation.logging.Logging.LoggingLevel.FINEST;
+import static org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb.NameService.READ_WRITE;
+import static org.apache.yoko.testify.jupiter.annotation.logging.Logging.LoggingLevel.FINEST;
 
 @ConfigureServer(serverOrb = @ConfigureOrb(nameService = READ_WRITE))
 @Tracing

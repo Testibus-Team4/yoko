@@ -19,8 +19,8 @@ package org.apache.yoko;
 import acme.Echo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import testify.jupiter.annotation.iiop.ConfigureServer;
-import testify.jupiter.annotation.iiop.ConfigureServer.RemoteImpl;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer;
+import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.RemoteImpl;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

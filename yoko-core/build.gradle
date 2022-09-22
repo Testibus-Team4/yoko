@@ -22,6 +22,7 @@ dependencies {
 
   // compile against Yoko implementation
   compile project(":yoko-rmi-impl")
+  testLib project(":yoko-testify")
 
   artifactImplementation sourceSets.main.output
 

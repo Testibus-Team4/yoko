@@ -1,7 +1,4 @@
 dependencies {
-  //spec project(':yoko-rmi-spec')
-
-  implementation project(":yoko-core")
   implementation 'junit:junit:4.12'
   implementation 'org.mockito:mockito-core:2.22.0'
   implementation 'org.mockito:mockito-junit-jupiter:2.22.0'

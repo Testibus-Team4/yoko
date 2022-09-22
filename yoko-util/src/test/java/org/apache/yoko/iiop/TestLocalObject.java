@@ -29,7 +29,7 @@ public interface TestLocalObject extends org.omg.CORBA.Object {
     default int _hash(int maximum) { return hashCode() % (maximum + 1); }
     default org.omg.CORBA.Object _duplicate() { return LOCAL_OBJECT._duplicate(); }
     default void _release() { LOCAL_OBJECT._release(); }
-    default org.omg.CORBA.Object _get_interface() { return LOCAL_OBJECT._get_interface(); }
+    default InterfaceDef _get_interface() { return LOCAL_OBJECT._get_interface(); }
     default org.omg.CORBA.Object _get_interface_def() { return LOCAL_OBJECT._get_interface_def(); }
     default Request _request(String s) { return LOCAL_OBJECT._request(s); }
     default Request _create_request(Context ctx, String operation, NVList arg_list, NamedValue result) { return LOCAL_OBJECT._create_request(ctx, operation, arg_list, result); }

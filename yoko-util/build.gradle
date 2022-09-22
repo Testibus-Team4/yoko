@@ -3,6 +3,8 @@ dependencies {
   spec project(':yoko-rmi-spec')
 
   testImplementation project(":yoko-core")
+  testImplementation project(":yoko-testify")
+  implementation "org.junit.jupiter:junit-jupiter:5.8.2"
 }
 
 jar {

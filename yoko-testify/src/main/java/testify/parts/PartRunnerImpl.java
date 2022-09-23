@@ -14,14 +14,14 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.parts;
+package testify.parts;
 
 import junit.framework.AssertionFailedError;
-import org.apache.yoko.testify.bus.Bus;
-import org.apache.yoko.testify.bus.InterProcessBus;
-import org.apache.yoko.testify.bus.LogLevel;
-import org.apache.yoko.testify.io.EasyCloseable;
-import org.apache.yoko.testify.util.ObjectUtil;
+import testify.bus.Bus;
+import testify.bus.InterProcessBus;
+import testify.bus.LogLevel;
+import testify.io.EasyCloseable;
+import testify.util.ObjectUtil;
 
 import java.util.Deque;
 import java.util.EnumMap;
@@ -36,9 +36,9 @@ import java.util.stream.Collectors;
 
 import static java.util.EnumSet.complementOf;
 import static java.util.concurrent.TimeUnit.SECONDS;
-import static org.apache.yoko.testify.bus.LogLevel.DEBUG;
-import static org.apache.yoko.testify.bus.LogLevel.ERROR;
-import static org.apache.yoko.testify.bus.LogLevel.WARN;
+import static testify.bus.LogLevel.DEBUG;
+import static testify.bus.LogLevel.ERROR;
+import static testify.bus.LogLevel.WARN;
 
 class PartRunnerImpl implements PartRunner {
     private static final EnumSet<LogLevel> URGENT_LEVELS = EnumSet.of(ERROR, WARN);

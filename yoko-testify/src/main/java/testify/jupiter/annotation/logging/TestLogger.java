@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.jupiter.annotation.logging;
+package testify.jupiter.annotation.logging;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 
@@ -31,8 +31,8 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import static org.junit.platform.commons.support.AnnotationSupport.findRepeatableAnnotations;
-import static org.apache.yoko.testify.util.Queues.drain;
-import static org.apache.yoko.testify.util.Queues.drainInOrder;
+import static testify.util.Queues.drain;
+import static testify.util.Queues.drainInOrder;
 
 /**
  * Log each test and conditionally print out the log messages

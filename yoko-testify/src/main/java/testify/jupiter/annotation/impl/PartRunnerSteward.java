@@ -14,12 +14,12 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.jupiter.annotation.impl;
+package testify.jupiter.annotation.impl;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
-import org.apache.yoko.testify.jupiter.annotation.ConfigurePartRunner;
-import org.apache.yoko.testify.jupiter.annotation.Summoner;
-import org.apache.yoko.testify.parts.PartRunner;
+import testify.jupiter.annotation.ConfigurePartRunner;
+import testify.jupiter.annotation.Summoner;
+import testify.parts.PartRunner;
 
 public class PartRunnerSteward implements ExtensionContext.Store.CloseableResource {
     private static final Summoner<ConfigurePartRunner, PartRunnerSteward> SUMMONER = Summoner.forAnnotation(ConfigurePartRunner.class, PartRunnerSteward.class, PartRunnerSteward::new);

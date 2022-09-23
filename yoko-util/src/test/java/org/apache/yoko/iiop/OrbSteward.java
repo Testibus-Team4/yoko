@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.jupiter.annotation.iiop;
+package testify.jupiter.annotation.iiop;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -25,10 +25,10 @@ import org.omg.PortableInterceptor.ORBInitializer;
 import org.omg.PortableServer.POA;
 import org.omg.PortableServer.POAHelper;
 import org.omg.PortableServer.POAManagerPackage.AdapterInactive;
-import org.apache.yoko.testify.jupiter.annotation.Summoner;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb.UseWithOrb;
-import org.apache.yoko.testify.util.ArrayUtils;
-import org.apache.yoko.testify.util.Predicates;
+import testify.jupiter.annotation.Summoner;
+import testify.jupiter.annotation.iiop.ConfigureOrb.UseWithOrb;
+import testify.util.ArrayUtils;
+import testify.util.Predicates;
 
 import java.util.Properties;
 import java.util.function.Predicate;
@@ -39,7 +39,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.platform.commons.support.AnnotationSupport.findAnnotation;
 import static org.junit.platform.commons.support.ModifierSupport.isPublic;
 import static org.junit.platform.commons.support.ModifierSupport.isStatic;
-import static org.apache.yoko.testify.streams.Collectors.requireNoMoreThanOne;
+import static testify.streams.Collectors.requireNoMoreThanOne;
 
 class OrbSteward implements ExtensionContext.Store.CloseableResource {
     private static final Class<?> CONNECTION_HELPER_CLASS;

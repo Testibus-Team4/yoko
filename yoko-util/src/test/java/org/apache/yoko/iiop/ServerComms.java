@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.jupiter.annotation.iiop;
+package testify.jupiter.annotation.iiop;
 
 import org.junit.platform.commons.support.ReflectionSupport;
 import org.omg.CORBA.COMM_FAILURE;
@@ -25,21 +25,21 @@ import org.omg.CosNaming.NamingContext;
 import org.omg.CosNaming.NamingContextHelper;
 import org.omg.PortableServer.Servant;
 import org.opentest4j.TestAbortedException;
-import org.apache.yoko.testify.bus.Bus;
-import org.apache.yoko.testify.bus.EnumSpec;
-import org.apache.yoko.testify.bus.FieldSpec;
-import org.apache.yoko.testify.bus.LogLevel;
-import org.apache.yoko.testify.bus.MethodSpec;
-import org.apache.yoko.testify.bus.StringSpec;
-import org.apache.yoko.testify.bus.TypeSpec;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.CorbanameUrl;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.ServerName;
-import org.apache.yoko.testify.jupiter.annotation.logging.TestLogger;
-import org.apache.yoko.testify.parts.PartRunner;
-import org.apache.yoko.testify.util.Optionals;
-import org.apache.yoko.testify.util.Stack;
-import org.apache.yoko.testify.util.Throw;
+import testify.bus.Bus;
+import testify.bus.EnumSpec;
+import testify.bus.FieldSpec;
+import testify.bus.LogLevel;
+import testify.bus.MethodSpec;
+import testify.bus.StringSpec;
+import testify.bus.TypeSpec;
+import testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
+import testify.jupiter.annotation.iiop.ConfigureServer.CorbanameUrl;
+import testify.jupiter.annotation.iiop.ConfigureServer.ServerName;
+import testify.jupiter.annotation.logging.TestLogger;
+import testify.parts.PartRunner;
+import testify.util.Optionals;
+import testify.util.Stack;
+import testify.util.Throw;
 
 import javax.rmi.CORBA.Tie;
 import javax.rmi.CORBA.Util;
@@ -71,10 +71,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.platform.commons.support.AnnotationSupport.findAnnotation;
-import static org.apache.yoko.testify.jupiter.annotation.iiop.ServerComms.ServerInfo.NAME_SERVICE_URL;
-import static org.apache.yoko.testify.util.FormatUtil.escapeHostForUseInUrl;
-import static org.apache.yoko.testify.util.Reflect.newInstance;
-import static org.apache.yoko.testify.util.Reflect.newMatchingInstance;
+import static testify.jupiter.annotation.iiop.ServerComms.ServerInfo.NAME_SERVICE_URL;
+import static testify.util.FormatUtil.escapeHostForUseInUrl;
+import static testify.util.Reflect.newInstance;
+import static testify.util.Reflect.newMatchingInstance;
 
 final class ServerComms implements Serializable {
     /*

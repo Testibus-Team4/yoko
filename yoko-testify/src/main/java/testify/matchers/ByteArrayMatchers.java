@@ -1,4 +1,4 @@
-package org.apache.yoko.testify.matchers;
+package testify.matchers;
 
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;

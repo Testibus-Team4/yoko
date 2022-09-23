@@ -20,16 +20,16 @@ import org.omg.CORBA.ORB;
 import org.omg.CosNaming.NameComponent;
 import org.omg.CosNaming.NamingContext;
 import org.omg.PortableInterceptor.ClientRequestInfo;
-import org.apache.yoko.testify.iiop.TestClientRequestInterceptor;
-import org.apache.yoko.testify.jupiter.annotation.RetriedTest;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb.UseWithOrb;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.BeforeServer;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ServerControl;
-import org.apache.yoko.testify.parts.PartRunner;
+import testify.iiop.TestClientRequestInterceptor;
+import testify.jupiter.annotation.RetriedTest;
+import testify.jupiter.annotation.iiop.ConfigureOrb;
+import testify.jupiter.annotation.iiop.ConfigureOrb.UseWithOrb;
+import testify.jupiter.annotation.iiop.ConfigureServer;
+import testify.jupiter.annotation.iiop.ConfigureServer.BeforeServer;
+import testify.jupiter.annotation.iiop.ServerControl;
+import testify.parts.PartRunner;
 
-import static org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb.NameService.READ_WRITE;
+import static testify.jupiter.annotation.iiop.ConfigureOrb.NameService.READ_WRITE;
 
 @ConfigureServer(serverOrb = @ConfigureOrb(nameService = READ_WRITE))
 public class StringToObjectTest {

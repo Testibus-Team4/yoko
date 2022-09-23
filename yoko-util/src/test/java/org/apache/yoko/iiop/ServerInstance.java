@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.jupiter.annotation.iiop;
+package testify.jupiter.annotation.iiop;
 
 import org.apache.yoko.orb.OBPortableServer.POAManager_impl;
 import org.apache.yoko.orb.OCI.IIOP.AcceptorInfo;
@@ -33,10 +33,10 @@ import org.omg.PortableServer.POAPackage.InvalidPolicy;
 import org.omg.PortableServer.RequestProcessingPolicyValue;
 import org.omg.PortableServer.ServantRetentionPolicyValue;
 import org.omg.PortableServer.ThreadPolicyValue;
-import org.apache.yoko.testify.bus.Bus;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.ServerName;
-import org.apache.yoko.testify.util.Maps;
-import org.apache.yoko.testify.util.Throw;
+import testify.bus.Bus;
+import testify.jupiter.annotation.iiop.ConfigureServer.ServerName;
+import testify.util.Maps;
+import testify.util.Throw;
 
 import java.util.Map;
 import java.util.Properties;

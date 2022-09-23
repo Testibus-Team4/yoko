@@ -14,13 +14,13 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.jupiter.annotation.impl;
+package testify.jupiter.annotation.impl;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ExtensionContext.Namespace;
 import org.junit.jupiter.api.extension.ExtensionContext.Store;
 import org.junit.jupiter.api.extension.ExtensionContext.Store.CloseableResource;
-import org.apache.yoko.testify.jupiter.annotation.Summoner;
+import testify.jupiter.annotation.Summoner;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedElement;

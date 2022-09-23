@@ -14,15 +14,15 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.parts;
+package testify.parts;
 
-import org.apache.yoko.testify.bus.InterProcessBus;
-import org.apache.yoko.testify.util.SerialUtil;
+import testify.bus.InterProcessBus;
+import testify.util.SerialUtil;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.apache.yoko.testify.util.SerialUtil.stringify;
-import static org.apache.yoko.testify.util.SerialUtil.unstringify;
+import static testify.util.SerialUtil.stringify;
+import static testify.util.SerialUtil.unstringify;
 
 enum ThreadRunner implements Runner<Thread> {
     SINGLETON

@@ -14,15 +14,15 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.bus;
+package testify.bus;
 
-import org.apache.yoko.testify.streams.BiStream;
+import testify.streams.BiStream;
 
 import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-import static org.apache.yoko.testify.util.ObjectUtil.getNextObjectLabel;
+import static testify.util.ObjectUtil.getNextObjectLabel;
 
 class BusImpl implements Bus {
     private final String label = getNextObjectLabel(Bus.class);

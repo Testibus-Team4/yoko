@@ -14,9 +14,9 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.bus;
+package testify.bus;
 
-import org.apache.yoko.testify.util.Stack;
+import testify.util.Stack;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -33,8 +33,8 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.apache.yoko.testify.bus.LogLevel.DEFAULT;
-import static org.apache.yoko.testify.util.ObjectUtil.getNextObjectLabel;
+import static testify.bus.LogLevel.DEFAULT;
+import static testify.util.ObjectUtil.getNextObjectLabel;
 
 // Although some of the methods here are fluent in design
 // (i.e. they return a Bus object suitable for method chaining)

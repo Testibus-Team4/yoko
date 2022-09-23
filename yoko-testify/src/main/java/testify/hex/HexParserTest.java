@@ -1,4 +1,4 @@
-package org.apache.yoko.testify.hex;
+package testify.hex;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,10 +6,10 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.apache.yoko.testify.hex.HexParser.HEX_DUMP;
-import static org.apache.yoko.testify.hex.HexParser.HEX_STRING;
-import static org.apache.yoko.testify.matchers.ByteArrayMatchers.emptyByteArray;
-import static org.apache.yoko.testify.matchers.ByteArrayMatchers.matchesHex;
+import static testify.hex.HexParser.HEX_DUMP;
+import static testify.hex.HexParser.HEX_STRING;
+import static testify.matchers.ByteArrayMatchers.emptyByteArray;
+import static testify.matchers.ByteArrayMatchers.matchesHex;
 
 class HexParserTest {
 

@@ -28,12 +28,12 @@ import org.omg.CORBA.Policy;
 import org.omg.CSIIOP.TransportAddress;
 import org.omg.IOP.TaggedComponent;
 import org.omg.PortableInterceptor.IORInfo;
-import org.apache.yoko.testify.bus.Bus;
-import org.apache.yoko.testify.iiop.TestIORInterceptor;
-import org.apache.yoko.testify.jupiter.annotation.Tracing;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb.UseWithOrb;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
+import testify.bus.Bus;
+import testify.iiop.TestIORInterceptor;
+import testify.jupiter.annotation.Tracing;
+import testify.jupiter.annotation.iiop.ConfigureOrb.UseWithOrb;
+import testify.jupiter.annotation.iiop.ConfigureServer;
+import testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
 
 import java.io.IOException;
 import java.lang.reflect.Field;

@@ -19,8 +19,8 @@ package org.apache.yoko;
 import acme.Echo;
 import acme.EchoImpl;
 import org.junit.jupiter.api.Test;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
+import testify.jupiter.annotation.iiop.ConfigureServer;
+import testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
 
 import java.rmi.RemoteException;
 

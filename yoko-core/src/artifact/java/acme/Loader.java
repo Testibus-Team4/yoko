@@ -37,7 +37,7 @@ import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.emptyString;
 import static org.hamcrest.Matchers.not;
-import static org.apache.yoko.testify.util.Throw.invokeWithImpunity;
+import static testify.util.Throw.invokeWithImpunity;
 
 /**
  * A simplified mechanism (with a lot of debug) for loading classes from the specialised test class paths.

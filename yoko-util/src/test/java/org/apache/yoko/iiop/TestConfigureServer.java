@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.jupiter.annotation.iiop;
+package testify.jupiter.annotation.iiop;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -22,18 +22,18 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.omg.CORBA.ORB;
 import org.omg.PortableInterceptor.ORBInitInfo;
-import org.apache.yoko.testify.iiop.TestORBInitializer;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb.UseWithOrb;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.BeforeServer;
+import testify.iiop.TestORBInitializer;
+import testify.jupiter.annotation.iiop.ConfigureOrb.UseWithOrb;
+import testify.jupiter.annotation.iiop.ConfigureServer.BeforeServer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.Separation.COLLOCATED;
-import static org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.Separation.INTER_ORB;
-import static org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.Separation.INTER_PROCESS;
+import static testify.jupiter.annotation.iiop.ConfigureServer.Separation.COLLOCATED;
+import static testify.jupiter.annotation.iiop.ConfigureServer.Separation.INTER_ORB;
+import static testify.jupiter.annotation.iiop.ConfigureServer.Separation.INTER_PROCESS;
 
 public class TestConfigureServer {
     @ConfigureServer(

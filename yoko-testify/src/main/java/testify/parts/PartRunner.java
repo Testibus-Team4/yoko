@@ -14,10 +14,10 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.parts;
+package testify.parts;
 
-import org.apache.yoko.testify.bus.Bus;
-import org.apache.yoko.testify.bus.LogLevel;
+import testify.bus.Bus;
+import testify.bus.LogLevel;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.function.Consumer;

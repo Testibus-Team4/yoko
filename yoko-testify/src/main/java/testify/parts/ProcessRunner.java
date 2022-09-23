@@ -14,12 +14,12 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.parts;
+package testify.parts;
 
-import org.apache.yoko.testify.bus.Bus;
-import org.apache.yoko.testify.bus.InterProcessBus;
-import org.apache.yoko.testify.bus.TypeSpec;
-import org.apache.yoko.testify.streams.BiStream;
+import testify.bus.Bus;
+import testify.bus.InterProcessBus;
+import testify.bus.TypeSpec;
+import testify.streams.BiStream;
 
 import java.io.IOError;
 import java.io.IOException;

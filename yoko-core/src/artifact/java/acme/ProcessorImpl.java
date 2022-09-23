@@ -16,7 +16,7 @@
  */
 package acme;
 
-import org.apache.yoko.testify.bus.Bus;
+import testify.bus.Bus;
 
 import java.io.Serializable;
 import java.rmi.RemoteException;

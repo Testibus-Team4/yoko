@@ -25,16 +25,16 @@ import org.omg.CosNaming.NameComponent;
 import org.omg.CosNaming.NamingContext;
 import org.omg.CosNaming.NamingContextHelper;
 import org.opentest4j.AssertionFailedError;
-import org.apache.yoko.testify.jupiter.annotation.RetriedTest;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.Control;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.CorbanameUrl;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.NameServiceUrl;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ServerControl;
-import org.apache.yoko.testify.jupiter.annotation.logging.Logging;
-import org.apache.yoko.testify.util.Stubs;
+import testify.jupiter.annotation.RetriedTest;
+import testify.jupiter.annotation.iiop.ConfigureOrb;
+import testify.jupiter.annotation.iiop.ConfigureServer;
+import testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
+import testify.jupiter.annotation.iiop.ConfigureServer.Control;
+import testify.jupiter.annotation.iiop.ConfigureServer.CorbanameUrl;
+import testify.jupiter.annotation.iiop.ConfigureServer.NameServiceUrl;
+import testify.jupiter.annotation.iiop.ServerControl;
+import testify.jupiter.annotation.logging.Logging;
+import testify.util.Stubs;
 
 import java.rmi.RemoteException;
 import java.util.concurrent.ForkJoinPool;
@@ -44,8 +44,8 @@ import static java.util.stream.Collectors.joining;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb.NameService.READ_WRITE;
-import static org.apache.yoko.testify.jupiter.annotation.logging.Logging.LoggingLevel.FINE;
+import static testify.jupiter.annotation.iiop.ConfigureOrb.NameService.READ_WRITE;
+import static testify.jupiter.annotation.logging.Logging.LoggingLevel.FINE;
 
 @ConfigureServer(serverOrb = @ConfigureOrb(nameService = READ_WRITE))
 public class ServerRestartTest {

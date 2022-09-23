@@ -14,13 +14,13 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.jupiter.annotation;
+package testify.jupiter.annotation;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
-import org.apache.yoko.testify.jupiter.annotation.impl.SimpleParameterResolver;
-import org.apache.yoko.testify.parts.PartRunner;
+import testify.jupiter.annotation.impl.SimpleParameterResolver;
+import testify.parts.PartRunner;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;
@@ -28,7 +28,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import static org.apache.yoko.testify.jupiter.annotation.impl.PartRunnerSteward.getPartRunner;
+import static testify.jupiter.annotation.impl.PartRunnerSteward.getPartRunner;
 
 @ExtendWith(PartRunnerExtension.class)
 @Target({ElementType.ANNOTATION_TYPE, ElementType.TYPE})

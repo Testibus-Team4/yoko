@@ -14,11 +14,11 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.bus;
+package testify.bus;
 
 import java.util.function.Consumer;
 
-import static org.apache.yoko.testify.util.ObjectUtil.getNextObjectLabel;
+import static testify.util.ObjectUtil.getNextObjectLabel;
 
 // Provide event functionality. This interface should remain package-private.
 class EventBusImpl implements EventBus {

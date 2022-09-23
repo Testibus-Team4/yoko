@@ -1,4 +1,4 @@
-package org.apache.yoko.testify.iiop;
+package testify.iiop;
 
 import org.omg.CORBA.Context;
 import org.omg.CORBA.ContextList;
@@ -12,7 +12,7 @@ import org.omg.CORBA.Policy;
 import org.omg.CORBA.Request;
 import org.omg.CORBA.SetOverrideType;
 
-import static org.apache.yoko.testify.iiop.TestLocalObject.Internals.LOCAL_OBJECT;
+import static testify.iiop.TestLocalObject.Internals.LOCAL_OBJECT;
 
 /**
  * CORBA's LocalObject implementation is actually stateless and could have been a default interface.

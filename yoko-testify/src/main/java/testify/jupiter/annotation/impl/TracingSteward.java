@@ -14,10 +14,10 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.jupiter.annotation.impl;
+package testify.jupiter.annotation.impl;
 
-import org.apache.yoko.testify.jupiter.annotation.Tracing;
-import org.apache.yoko.testify.parts.PartRunner;
+import testify.jupiter.annotation.Tracing;
+import testify.parts.PartRunner;
 
 import java.lang.reflect.AnnotatedElement;
 

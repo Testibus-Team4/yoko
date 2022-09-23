@@ -22,10 +22,10 @@ import test.types.TestDynAny;
 import test.types.TestPortableTypes;
 import test.types.TestTypeCode;
 import test.types.TestUnion;
-import org.apache.yoko.testify.bus.LogLevel;
-import org.apache.yoko.testify.jupiter.annotation.ConfigurePartRunner;
-import org.apache.yoko.testify.jupiter.annotation.Tracing;
-import org.apache.yoko.testify.parts.PartRunner;
+import testify.bus.LogLevel;
+import testify.jupiter.annotation.ConfigurePartRunner;
+import testify.jupiter.annotation.Tracing;
+import testify.parts.PartRunner;
 
 @ConfigurePartRunner
 @Tracing

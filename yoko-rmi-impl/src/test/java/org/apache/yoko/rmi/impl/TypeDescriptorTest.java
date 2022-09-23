@@ -8,7 +8,7 @@ import org.omg.CORBA.TypeCode;
 import org.omg.CORBA.portable.IDLEntity;
 import org.omg.CORBA.portable.InputStream;
 import org.omg.CORBA.portable.OutputStream;
-import org.apache.yoko.testify.jupiter.annotation.ClassSource;
+import testify.jupiter.annotation.ClassSource;
 
 import javax.rmi.CORBA.ClassDesc;
 import java.io.Externalizable;

@@ -1,4 +1,4 @@
-package org.apache.yoko.testify.hex;
+package testify.hex;
 
 import java.util.Formatter;
 

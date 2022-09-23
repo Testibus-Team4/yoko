@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.jupiter.annotation.iiop;
+package testify.jupiter.annotation.iiop;
 
 import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -26,7 +26,7 @@ import org.junit.jupiter.api.extension.ParameterResolver;
 import org.omg.CORBA.ORB;
 import org.omg.PortableServer.POA;
 
-import static org.apache.yoko.testify.jupiter.annotation.iiop.OrbSteward.getOrb;
+import static testify.jupiter.annotation.iiop.OrbSteward.getOrb;
 
 /**
  * Must be registered using the {@link ExtendWith} annotation

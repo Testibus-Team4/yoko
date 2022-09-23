@@ -14,23 +14,23 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.jupiter.annotation.iiop;
+package testify.jupiter.annotation.iiop;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.omg.CORBA.ORB;
 import org.omg.CORBA.Object;
 import org.omg.CosNaming.NamingContext;
 import org.omg.CosNaming.NamingContextHelper;
-import org.apache.yoko.testify.bus.Bus;
-import org.apache.yoko.testify.jupiter.annotation.Summoner;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.BeforeServer;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.Control;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.NameServiceStub;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.RemoteImpl;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ServerExtension.ParamType;
-import org.apache.yoko.testify.jupiter.annotation.impl.AnnotationButler;
-import org.apache.yoko.testify.parts.PartRunner;
+import testify.bus.Bus;
+import testify.jupiter.annotation.Summoner;
+import testify.jupiter.annotation.iiop.ConfigureServer.BeforeServer;
+import testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
+import testify.jupiter.annotation.iiop.ConfigureServer.Control;
+import testify.jupiter.annotation.iiop.ConfigureServer.NameServiceStub;
+import testify.jupiter.annotation.iiop.ConfigureServer.RemoteImpl;
+import testify.jupiter.annotation.iiop.ServerExtension.ParamType;
+import testify.jupiter.annotation.impl.AnnotationButler;
+import testify.parts.PartRunner;
 
 import javax.rmi.PortableRemoteObject;
 import java.lang.reflect.Field;
@@ -49,15 +49,15 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.platform.commons.support.AnnotationSupport.findAnnotation;
-import static org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb.NameService.READ_ONLY;
-import static org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureOrb.NameService.READ_WRITE;
-import static org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.Separation.COLLOCATED;
-import static org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.Separation.INTER_PROCESS;
-import static org.apache.yoko.testify.jupiter.annotation.iiop.OrbSteward.args;
-import static org.apache.yoko.testify.jupiter.annotation.iiop.OrbSteward.props;
-import static org.apache.yoko.testify.jupiter.annotation.impl.PartRunnerSteward.getPartRunner;
-import static org.apache.yoko.testify.util.Assertions.failf;
-import static org.apache.yoko.testify.util.Reflect.setStaticField;
+import static testify.jupiter.annotation.iiop.ConfigureOrb.NameService.READ_ONLY;
+import static testify.jupiter.annotation.iiop.ConfigureOrb.NameService.READ_WRITE;
+import static testify.jupiter.annotation.iiop.ConfigureServer.Separation.COLLOCATED;
+import static testify.jupiter.annotation.iiop.ConfigureServer.Separation.INTER_PROCESS;
+import static testify.jupiter.annotation.iiop.OrbSteward.args;
+import static testify.jupiter.annotation.iiop.OrbSteward.props;
+import static testify.jupiter.annotation.impl.PartRunnerSteward.getPartRunner;
+import static testify.util.Assertions.failf;
+import static testify.util.Reflect.setStaticField;
 
 class ServerSteward {
     private static final Summoner<ConfigureServer, ServerSteward> SUMMONER = Summoner.forAnnotation(ConfigureServer.class, ServerSteward.class, ServerSteward::new);

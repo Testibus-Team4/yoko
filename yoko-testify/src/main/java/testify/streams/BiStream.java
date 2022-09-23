@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.streams;
+package testify.streams;
 
 import java.util.EnumMap;
 import java.util.HashMap;

@@ -14,9 +14,9 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.bus;
+package testify.bus;
 
-import org.apache.yoko.testify.util.SerialUtil;
+import testify.util.SerialUtil;
 
 public interface TypeSpec<T> {
     Class<? extends Enum> getDeclaringClass();

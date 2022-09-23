@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.util.function;
+package testify.util.function;
 
 import org.opentest4j.AssertionFailedError;
 

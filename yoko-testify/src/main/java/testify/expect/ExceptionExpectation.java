@@ -14,13 +14,13 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.expect;
+package testify.expect;
 
 import org.junit.jupiter.api.function.Executable;
 
 import java.util.function.UnaryOperator;
 
-import static org.apache.yoko.testify.expect.ExceptionExpectation.expect;
+import static testify.expect.ExceptionExpectation.expect;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.nullValue;

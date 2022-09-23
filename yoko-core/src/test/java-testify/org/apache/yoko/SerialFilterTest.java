@@ -20,15 +20,15 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import test.rmi.Sample;
 import test.rmi.SampleImpl;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer;
-import org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
+import testify.jupiter.annotation.iiop.ConfigureServer;
+import testify.jupiter.annotation.iiop.ConfigureServer.ClientStub;
 
 import java.io.InvalidClassException;
 import java.io.Serializable;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.apache.yoko.testify.jupiter.annotation.iiop.ConfigureServer.Separation.INTER_PROCESS;
+import static testify.jupiter.annotation.iiop.ConfigureServer.Separation.INTER_PROCESS;
 
 @ConfigureServer(
         separation = INTER_PROCESS,

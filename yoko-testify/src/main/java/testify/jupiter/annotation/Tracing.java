@@ -14,9 +14,9 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.jupiter.annotation;
+package testify.jupiter.annotation;
 
-import org.apache.yoko.testify.bus.LogLevel;
+import testify.bus.LogLevel;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
@@ -25,7 +25,7 @@ import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import static org.junit.platform.commons.support.AnnotationSupport.findAnnotation;
-import static org.apache.yoko.testify.bus.LogLevel.DEFAULT;
+import static testify.bus.LogLevel.DEFAULT;
 
 @Target({ANNOTATION_TYPE, TYPE})
 @Retention(RUNTIME)

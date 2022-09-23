@@ -13,7 +13,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.omg.CORBA.MARSHAL;
 import org.omg.CORBA.ORB;
-import org.apache.yoko.testify.jupiter.annotation.logging.Logging;
+import testify.jupiter.annotation.logging.Logging;
 
 import java.io.Serializable;
 import java.util.EnumSet;
@@ -24,7 +24,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.apache.yoko.testify.matchers.ByteArrayMatchers.matchesHex;
+import static testify.matchers.ByteArrayMatchers.matchesHex;
 
 /**
  * Test writing Java values directly to and reading them back from CDR streams.

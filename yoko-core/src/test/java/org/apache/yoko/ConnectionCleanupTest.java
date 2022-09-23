@@ -12,8 +12,8 @@ import org.omg.CORBA_2_3.portable.InputStream;
 import org.omg.PortableServer.POAManagerPackage.AdapterInactive;
 import org.omg.PortableServer.POAPackage.ServantAlreadyActive;
 import org.omg.PortableServer.POAPackage.WrongPolicy;
-import org.apache.yoko.testify.iiop.Skellington;
-import org.apache.yoko.testify.util.MultiException;
+import testify.iiop.Skellington;
+import testify.util.MultiException;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

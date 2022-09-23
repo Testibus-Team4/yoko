@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.iiop;
+package testify.iiop;
 
 import org.omg.PortableInterceptor.Interceptor;
 

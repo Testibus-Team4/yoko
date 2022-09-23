@@ -14,15 +14,15 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.bus;
+package testify.bus;
 
-import org.apache.yoko.testify.streams.BiStream;
+import testify.streams.BiStream;
 
 import java.util.Objects;
 import java.util.function.Consumer;
 
 import static java.util.Objects.requireNonNull;
-import static org.apache.yoko.testify.util.ObjectUtil.getNextObjectLabel;
+import static testify.util.ObjectUtil.getNextObjectLabel;
 
 class UserBusImpl implements UserBus {
     private static final String DELIMITER = "::";

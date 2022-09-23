@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.jupiter.annotation;
+package testify.jupiter.annotation;
 
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
@@ -28,7 +28,7 @@ import org.junit.jupiter.api.extension.TestTemplateInvocationContextProvider;
 import org.junit.platform.commons.support.AnnotationSupport;
 import org.junit.platform.commons.util.Preconditions;
 import org.opentest4j.TestAbortedException;
-import org.apache.yoko.testify.streams.Streams;
+import testify.streams.Streams;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

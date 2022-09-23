@@ -16,8 +16,8 @@
  */
 package acme;
 
-import org.apache.yoko.testify.bus.Bus;
-import org.apache.yoko.testify.bus.StringSpec;
+import testify.bus.Bus;
+import testify.bus.StringSpec;
 
 public class EchoImpl implements Echo {
     private enum BusKey implements StringSpec {MESSAGE}

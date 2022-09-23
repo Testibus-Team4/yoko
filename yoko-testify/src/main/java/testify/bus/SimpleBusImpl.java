@@ -14,12 +14,12 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.yoko.testify.bus;
+package testify.bus;
 
 import org.junit.jupiter.api.Assertions;
-import org.apache.yoko.testify.io.EasyCloseable;
-import org.apache.yoko.testify.streams.BiStream;
-import org.apache.yoko.testify.util.ObjectUtil;
+import testify.io.EasyCloseable;
+import testify.streams.BiStream;
+import testify.util.ObjectUtil;
 
 import java.util.List;
 import java.util.Map;

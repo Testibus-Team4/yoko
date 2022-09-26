@@ -50,7 +50,6 @@ class SimpleBusImplTest {
                 Future<String> msg = xs.submit(() -> simpleBus.get("msg"));
                 simpleBus.put("msg", "hello");
                 sleep(1);
-                System.out.println(msg.isDone());
                 Assertions.assertTrue(msg.isDone());
             } finally {
                 xs.shutdown();

@@ -18,10 +18,15 @@ package testify.bus;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import testify.jupiter.annotation.Tracing;
 
 import java.util.concurrent.*;
 
 import static java.lang.Thread.sleep;
+import static java.util.concurrent.TimeUnit.SECONDS;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static testify.jupiter.annotation.impl.TracingSteward.addTraceSettings;
 
 class SimpleBusImplTest {
 
@@ -41,16 +46,15 @@ class SimpleBusImplTest {
     }
 
     @Test
-    void testMsgIsDone() throws ExecutionException, InterruptedException {
+    @Tracing
+    void testGetMsg() throws Exception {
         try (SimpleBusImpl simpleBus = new SimpleBusImpl()) {
-
             // try an asynchronous get
             final ExecutorService xs = Executors.newSingleThreadExecutor();
             try {
                 Future<String> msg = xs.submit(() -> simpleBus.get("msg"));
                 simpleBus.put("msg", "hello");
-                sleep(1);
-                Assertions.assertTrue(msg.isDone());
+                assertEquals("hello",msg.get(5, SECONDS));
             } finally {
                 xs.shutdown();
             }
@@ -58,24 +62,7 @@ class SimpleBusImplTest {
     }
 
     @Test
-    void testMsgIsCorrect() throws ExecutionException, InterruptedException {
-        try (SimpleBusImpl simpleBus = new SimpleBusImpl()) {
-
-            // try an asynchronous get
-            final ExecutorService xs = Executors.newSingleThreadExecutor();
-            try {
-                final Future<String> msg = xs.submit(() -> simpleBus.get("msg"));
-                simpleBus.put("msg", "hello");
-                Assertions.assertEquals("hello", msg.get());
-                System.out.println("Correctly retrieved message: " + msg.get());
-            } finally {
-                xs.shutdown();
-            }
-        }
-    }
-
-    @Test
-    void testCheckCallbackHasNotBeenCalled() throws ExecutionException, InterruptedException {
+    void testCallbackHasNotBeenCalled() throws ExecutionException, InterruptedException {
         try (SimpleBusImpl simpleBus = new SimpleBusImpl()) {
 
             // try an asynchronous get
@@ -99,7 +86,7 @@ class SimpleBusImplTest {
     }
 
     @Test
-    void testCheckCallbackHasBeenCalledCorrectly() throws ExecutionException, InterruptedException {
+    void testCallbackHasBeenCalledCorrectly() throws ExecutionException, InterruptedException {
         try (SimpleBusImpl simpleBus = new SimpleBusImpl()) {
 
             // try an asynchronous get

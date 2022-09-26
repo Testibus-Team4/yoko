@@ -46,7 +46,6 @@ class SimpleBusImplTest {
     }
 
     @Test
-    @Tracing
     void testGetMsg() throws Exception {
         try (SimpleBusImpl simpleBus = new SimpleBusImpl()) {
             // try an asynchronous get

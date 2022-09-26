@@ -21,6 +21,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.*;
 
+import static java.lang.Thread.sleep;
+
 class SimpleBusImplTest {
 
     @Test
@@ -45,8 +47,10 @@ class SimpleBusImplTest {
             // try an asynchronous get
             final ExecutorService xs = Executors.newSingleThreadExecutor();
             try {
-                final Future<String> msg = xs.submit(() -> simpleBus.get("msg"));
+                Future<String> msg = xs.submit(() -> simpleBus.get("msg"));
                 simpleBus.put("msg", "hello");
+                sleep(1);
+                System.out.println(msg.isDone());
                 Assertions.assertTrue(msg.isDone());
             } finally {
                 xs.shutdown();

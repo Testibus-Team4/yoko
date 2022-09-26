@@ -28,7 +28,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import static org.junit.platform.commons.support.AnnotationSupport.findAnnotation;
 import static testify.bus.LogLevel.DEFAULT;
 
-@Target({ElementType.METHOD, ANNOTATION_TYPE, TYPE})
+@Target({ANNOTATION_TYPE, TYPE})
 @Retention(RUNTIME)
 public @interface Tracing {
     /** A regular expression to match the classes to trace */

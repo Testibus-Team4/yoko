@@ -6,7 +6,10 @@ dependencies {
 
 jar {
   manifest {
-    instruction 'Bundle-Description' , 'Apache Yoko Implementation Utilities'
+    instruction 'Bundle-Description' , 'Testify ORB Test Framework'
     instruction 'Export-Package'     , '*'
+    instruction 'Bundle-symbolicName', 'testify'
+    instruction 'Bundle-DocURL'      , 'https://github.com/OpenLiberty/yoko/wiki'
+    instruction 'Bundle-Vendor'      , 'OpenLiberty'
   }
 }

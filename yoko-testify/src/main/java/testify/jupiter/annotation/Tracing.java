@@ -18,14 +18,12 @@ package testify.jupiter.annotation;
 
 import testify.bus.LogLevel;
 
-import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
-import static org.junit.platform.commons.support.AnnotationSupport.findAnnotation;
 import static testify.bus.LogLevel.DEFAULT;
 
 @Target({ANNOTATION_TYPE, TYPE})

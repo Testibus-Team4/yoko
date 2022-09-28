@@ -1,7 +1,7 @@
-* xref:inline-text-formatting.adoc[]
-* xref:special-characters.adoc[]
-* xref:admonition.adoc[]
-* xref:sidebar.adoc[]
+* xref:bus-concept.adoc[]
+* xref:verbose-framework.adoc[]
+* xref:jul-logging.adoc[]
+* xref:extending-annotations.adoc[]
 * xref:ui-macros.adoc[]
 * Lists
 ** xref:lists/ordered-list.adoc[]

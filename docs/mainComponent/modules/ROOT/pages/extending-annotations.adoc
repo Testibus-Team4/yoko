@@ -1,4 +1,4 @@
-= Sidebar
+= Extending Annotations
 
 == Sidebar block
 

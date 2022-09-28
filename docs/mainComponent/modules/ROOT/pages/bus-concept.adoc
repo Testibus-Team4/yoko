@@ -1,4 +1,4 @@
-= Inline Text Formatting
+= Bus Concept
 :example-caption!:
 
 You can add the following inline styles to your content:

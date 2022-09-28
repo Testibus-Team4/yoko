@@ -105,7 +105,20 @@ configure(testProjects) {
 
   // ensure tests run under $buildDir somewhere
   test {
+    apply plugin: 'jacoco'
+    jacocoTestReport {
+        dependsOn test // tests are required to run before generating the report
+        reports {
+          html {
+            enabled true
+            destination file("$buildDir/../../reports/$project.name")
+          }
+        }
+    }
+    finalizedBy jacocoTestReport
+    
     useJUnitPlatform()
+
     workingDir = "$buildDir/testWorkingDir"
     doFirst {workingDir.mkdirs()}
     testLogging {

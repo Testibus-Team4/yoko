@@ -1,4 +1,4 @@
-= Special Characters and Symbols
+= Verbose Framework 
 :table-caption!:
 
 Special character and symbol replacement is built into Asciidoctor.

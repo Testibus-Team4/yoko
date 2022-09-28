@@ -2,7 +2,7 @@
 * xref:verbose-framework.adoc[]
 * xref:jul-logging.adoc[]
 * xref:extending-annotations.adoc[]
-* xref:ui-macros.adoc[]
+* xref:empty.adoc[]
 * Lists
 ** xref:lists/ordered-list.adoc[]
 ** xref:lists/unordered-list.adoc[]

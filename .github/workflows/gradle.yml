@@ -44,3 +44,8 @@ jobs:
                 fi
             done
         done
+    - name: Upload test coverage reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: reports
+        path: reports

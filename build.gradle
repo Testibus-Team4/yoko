@@ -37,7 +37,6 @@ def getGitHash(length) {
 def testProjects = "osgi util rmi-impl core test testify".split(" ").collect{s->project(":yoko-" + s)}
 def shipProjects = "osgi util spec-corba rmi-spec rmi-impl core jdk-supplement testify".split(" ").collect{s->project(":yoko-" + s)}
 
-
 /* Standard configuration for each subproject */
 subprojects {
   apply plugin: 'java'
@@ -109,6 +108,12 @@ configure(testProjects) {
     apply plugin: 'jacoco'
     jacocoTestReport {
         dependsOn test // tests are required to run before generating the report
+        reports {
+          html {
+            enabled true
+            destination file("$buildDir/../../reports/$project.name")
+          }
+        }
     }
     finalizedBy jacocoTestReport
     

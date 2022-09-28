@@ -104,7 +104,6 @@ class HexBuilderTest {
         String s = "B";
         String expected = "000000024200";
         String result = newHexBuildObject.str(s).hex();
-        System.out.println(result);
         assertEquals(expected, result);
     }
 
@@ -114,7 +113,6 @@ class HexBuilderTest {
         String s = "This message is a secret!";
         String expected = "0000001a54686973206d6573736167652069732061207365637265742100";
         String result = newHexBuildObject.str(s).hex();
-        System.out.println(result + " " + s.length());
         assertEquals(expected, result);
     }
 

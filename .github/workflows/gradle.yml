@@ -15,12 +15,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
+    - uses: actions/checkout@v3
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
       with:
-        java-version: 1.8
+        java-version: 11
+        distribution: 'adopt'
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Check JAR licenses
+      run: |
+        JARS=$(find ./ -name '*.jar' -type f | grep yoko | grep libs)
+        SHIPPED_JARS=("osgi" "util" "spec-corba" "rmi-spec" "rmi-impl" "core" "jdk-supplement" "testify")
+        for shippedJar in ${SHIPPED_JARS[@]}; do
+            for jar in $JARS; do
+                if [[ $(basename $jar) == *"$shippedJar"* ]]; then
+                    echo "Checking $(basename $jar)"
+                    if $(unzip -p $jar META-INF/MANIFEST.MF | grep -q "Bundle-License: https://www.apache.org/licenses/LICENSE-2.0.txt"); then
+                        echo "License found"
+                    else
+                        echo "License not found"
+                        exit 1
+                    fi
+                else
+                    continue
+                fi
+            done
+        done

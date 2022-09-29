@@ -1,8 +1,9 @@
-* xref:bus-concept.adoc[]
+* xref:index.adoc[]
+* Bus Concept
+** xref:bus/testify.adoc[]
+** xref:bus/processes.adoc[]
 * xref:verbose-framework.adoc[]
 * xref:jul-logging.adoc[]
 * xref:extending-annotations.adoc[]
-* xref:empty.adoc[]
-* Lists
-** xref:lists/ordered-list.adoc[]
-** xref:lists/unordered-list.adoc[]
+* xref:example.adoc[]
+* xref:example2.adoc[]

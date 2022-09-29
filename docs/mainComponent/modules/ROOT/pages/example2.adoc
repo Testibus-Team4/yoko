@@ -1,4 +1,4 @@
-= Bus Concept
+= Example 2 (Fonts)
 :example-caption!:
 
 You can add the following inline styles to your content:

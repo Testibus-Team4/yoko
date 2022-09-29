@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Unordered Lists :: Testify Documentation</title>
+    <title>How the Bus Concept is used in Testfiy :: Testify Documentation</title>
     <meta name="generator" content="Antora 3.1.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -58,7 +58,19 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../bus-concept.html">Bus Concept</a>
+    <a class="nav-link" href="../index.html">Testify</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bus Concept</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#lists/testify.adoc">lists/testify.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#lists/processes.adoc">lists/processes.adoc</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../verbose-framework.html">Verbose Framework</a>
@@ -70,19 +82,10 @@
     <a class="nav-link" href="../extending-annotations.html">Extending Annotations</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../empty.html">Empty</a>
+    <a class="nav-link" href="../example.html">Example 1 (Macros)</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lists</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="ordered-list.html">Ordered Lists</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="unordered-list.html">Unordered Lists</a>
-  </li>
-</ul>
+    <a class="nav-link" href="../example2.html">Example 2 (Fonts)</a>
   </li>
 </ul>
   </li>
@@ -115,89 +118,88 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Features</a></li>
-    <li>Lists</li>
-    <li><a href="unordered-list.html">Unordered Lists</a></li>
+    <li><a href="testify.html">How the Bus Concept is used in Testfiy</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/Testibus-Team4/yoko/edit/docs/docs/mainComponent/modules/ROOT/pages/lists/unordered-list.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/Testibus-Team4/yoko/edit/docs/docs/mainComponent/modules/ROOT/pages/Bus%20Concept/testify.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Unordered Lists</h1>
+<h1 class="page">How the Bus Concept is used in Testfiy</h1>
 <div class="sect1">
-<h2 id="_unordered_list"><a class="anchor" href="#_unordered_list"></a>Unordered list</h2>
+<h2 id="_ordered_list"><a class="anchor" href="#_ordered_list"></a>Ordered list</h2>
 <div class="sectionbody">
 <div class="listingblock">
-<div class="title">Unordered list with title</div>
+<div class="title">Ordered list with title</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">.Optional title of list
-* Item A
-* Item B
-* Item C</code></pre>
+. Step 1
+. Step 2
+. Step 3</code></pre>
 </div>
 </div>
-<div class="ulist">
+<div class="olist arabic">
 <div class="title">Optional title of list</div>
-<ul>
+<ol class="arabic">
 <li>
-<p>Item A</p>
+<p>Step 1</p>
 </li>
 <li>
-<p>Item B</p>
+<p>Step 2</p>
 </li>
 <li>
-<p>Item C</p>
+<p>Step 3</p>
 </li>
-</ul>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_nested_unordered_list"><a class="anchor" href="#_nested_unordered_list"></a>Nested unordered list</h2>
+<h2 id="_nested_ordered_list"><a class="anchor" href="#_nested_ordered_list"></a>Nested ordered list</h2>
 <div class="sectionbody">
 <div class="listingblock">
-<div class="title">Unordered list with nested levels</div>
+<div class="title">Ordered list with nested levels</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* Item A
-* Item B
-** Item B1
-** Item B2
-*** Sub-item of B2
-* Item C</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">. Step 1
+. Step 2
+.. Step 2a
+.. Step 2b
+... Sub-step 2b
+. Step 3</code></pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Item A</p>
+<p>Step 1</p>
 </li>
 <li>
-<p>Item B</p>
-<div class="ulist">
-<ul>
+<p>Step 2</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
-<p>Item B1</p>
+<p>Step 2a</p>
 </li>
 <li>
-<p>Item B2</p>
-<div class="ulist">
-<ul>
+<p>Step 2b</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
 <li>
-<p>Sub-item of B2</p>
+<p>Sub-step 2b</p>
 </li>
-</ul>
+</ol>
 </div>
 </li>
-</ul>
+</ol>
 </div>
 </li>
 <li>
-<p>Item C</p>
+<p>Step 3</p>
 </li>
-</ul>
+</ol>
 </div>
 </div>
 </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>How the Bus Concept is used in Testfiy :: Testify Documentation</title>
+    <title>Using the Bus across Threads and Sub Processes :: Testify Documentation</title>
     <meta name="generator" content="Antora 3.1.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -65,10 +65,10 @@
     <span class="nav-text">Bus Concept</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#lists/testify.adoc">lists/testify.adoc</a>
+    <a class="nav-link" href="testify.html">How the Bus Concept is used in Testfiy</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#lists/processes.adoc">lists/processes.adoc</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="processes.html">Using the Bus across Threads and Sub Processes</a>
   </li>
 </ul>
   </li>
@@ -118,88 +118,89 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Features</a></li>
-    <li><a href="testify.html">How the Bus Concept is used in Testfiy</a></li>
+    <li>Bus Concept</li>
+    <li><a href="processes.html">Using the Bus across Threads and Sub Processes</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/Testibus-Team4/yoko/edit/docs/docs/mainComponent/modules/ROOT/pages/Bus%20Concept/testify.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/Testibus-Team4/yoko/edit/docs/docs/mainComponent/modules/ROOT/pages/bus/processes.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">How the Bus Concept is used in Testfiy</h1>
+<h1 class="page">Using the Bus across Threads and Sub Processes</h1>
 <div class="sect1">
-<h2 id="_ordered_list"><a class="anchor" href="#_ordered_list"></a>Ordered list</h2>
+<h2 id="_unordered_list"><a class="anchor" href="#_unordered_list"></a>Unordered list</h2>
 <div class="sectionbody">
 <div class="listingblock">
-<div class="title">Ordered list with title</div>
+<div class="title">Unordered list with title</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">.Optional title of list
-. Step 1
-. Step 2
-. Step 3</code></pre>
+* Item A
+* Item B
+* Item C</code></pre>
 </div>
 </div>
-<div class="olist arabic">
+<div class="ulist">
 <div class="title">Optional title of list</div>
-<ol class="arabic">
+<ul>
 <li>
-<p>Step 1</p>
+<p>Item A</p>
 </li>
 <li>
-<p>Step 2</p>
+<p>Item B</p>
 </li>
 <li>
-<p>Step 3</p>
+<p>Item C</p>
 </li>
-</ol>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_nested_ordered_list"><a class="anchor" href="#_nested_ordered_list"></a>Nested ordered list</h2>
+<h2 id="_nested_unordered_list"><a class="anchor" href="#_nested_unordered_list"></a>Nested unordered list</h2>
 <div class="sectionbody">
 <div class="listingblock">
-<div class="title">Ordered list with nested levels</div>
+<div class="title">Unordered list with nested levels</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">. Step 1
-. Step 2
-.. Step 2a
-.. Step 2b
-... Sub-step 2b
-. Step 3</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* Item A
+* Item B
+** Item B1
+** Item B2
+*** Sub-item of B2
+* Item C</code></pre>
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
-<p>Step 1</p>
+<p>Item A</p>
 </li>
 <li>
-<p>Step 2</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<p>Item B</p>
+<div class="ulist">
+<ul>
 <li>
-<p>Step 2a</p>
+<p>Item B1</p>
 </li>
 <li>
-<p>Step 2b</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
+<p>Item B2</p>
+<div class="ulist">
+<ul>
 <li>
-<p>Sub-step 2b</p>
+<p>Sub-item of B2</p>
 </li>
-</ol>
+</ul>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 </li>
 <li>
-<p>Step 3</p>
+<p>Item C</p>
 </li>
-</ol>
+</ul>
 </div>
 </div>
 </div>

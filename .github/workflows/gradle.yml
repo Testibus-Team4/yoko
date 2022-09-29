@@ -23,6 +23,20 @@ jobs:
         distribution: 'adopt'
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+    - name: Check copyright Tag in Testify source files
+      run: |
+        SRC=$(find yoko-testify/ -name '*.java')
+        export year_modified=`git log -n 1 --pretty=format:%cd $i |grep -Eo '2[[:digit:]]{3}'`
+        for i in $SRC; do
+            if ! grep -q "Copyright $year_modified IBM Corporation and " $i; then
+                echo "Copyright not found or incorrect year in $i"
+                exit 1
+            else
+                if grep -q "Copyright $year_modified IBM Corporation and " $i; then
+                    echo "Copyright found in $i"
+                fi
+            fi
+        done
     - name: Build with Gradle
       run: ./gradlew build
     - name: Check JAR licenses

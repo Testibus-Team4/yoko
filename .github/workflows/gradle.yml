@@ -23,6 +23,18 @@ jobs:
         distribution: 'adopt'
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+    - name: Check copyright Tag in Testify source files
+      run: |
+        SRC=$(find yoko-testify/ -name '*.java')
+        year=$(date +%Y)
+        for i in $SRC; do
+            if ! grep -q "Copyright (c) $year IBM Corporation and others." $i; then
+                echo "Copyright not found $i"
+                exit 1
+            else
+                echo "Copyright tag found in $i"
+            fi
+        done
     - name: Build with Gradle
       run: ./gradlew build
     - name: Check JAR licenses
@@ -43,25 +55,4 @@ jobs:
                     continue
                 fi
             done
-        done
-    - name: Check copyright Tag in Testify source files
-      run: |
-        SRC=$(find yoko-testify/ -name '*.java')
-        year=$(date +%Y)
-        for i in $SRC; do
-            if ! grep -q "Copyright (c) $year IBM Corporation and others." $i; then
-                echo "Copyright not found $i"
-                (echo "/*******************************************************************************
-        * Copyright (c) 2022 IBM Corporation and others.
-        * All rights reserved. This program and the accompanying materials
-        * are made available under the terms of the Eclipse Public License v1.0
-        * which accompanies this distribution, and is available at
-        * http://www.eclipse.org/legal/epl-v10.html
-        *
-        * Contributors:
-        *     IBM Corporation - Initial implementation
-        *******************************************************************************/\n" && cat $i) > $i.new && mv $i.new $i
-            else
-                echo "Copyright tag found in $i"
-            fi
         done

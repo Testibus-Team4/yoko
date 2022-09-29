@@ -1,4 +1,4 @@
-= J.U.L Logging
+= Enabling J.U.L Logging
 
 == Admonition styles
 

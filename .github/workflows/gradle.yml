@@ -46,7 +46,7 @@ jobs:
         done
     - name: Check copyright Tag in Testify source files
       run: |
-        SRC=$(find /yoko-testify -name '*.java')
+        SRC=$(find yoko-testify/ -name '*.java')
         year=$(date +%Y)
         for i in $SRC; do
             if ! grep -q "Copyright (c) $year IBM Corporation and others." $i; then

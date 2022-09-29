@@ -1,7 +1,8 @@
 package testify.hex;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class HexBuilderTest {
@@ -15,7 +16,7 @@ class HexBuilderTest {
     @Test
     void testOctWriting() {
         HexBuilder newHexBuildObject = HexBuilder.buildHex();
-        int[] listInt = {12, 13, 100, 128};
+        int[] listInt = {0x0c, 0x0d, 0x64, 0x80};
         String expected = "0c0d6480";
         String result = newHexBuildObject.oct(listInt).hex();
         assertEquals(expected, result);
@@ -85,7 +86,7 @@ class HexBuilderTest {
     @Test
     void testSeqBytes() {
         HexBuilder newHexBuildObject = HexBuilder.buildHex();
-        byte[] byte_array = {10, 5, 25, 100, 127};
+        byte[] byte_array = {0x0a, 0x05, 0x19, 0x64, 0x7f};
         String expected = "000000050a0519647f";
         String result = newHexBuildObject.seq(byte_array).hex();
         assertEquals(expected, result);
@@ -135,7 +136,7 @@ class HexBuilderTest {
     @Test
     void testCdrEncapsulation() {
         HexBuilder newHexBuildObject = HexBuilder.buildHex();
-        int[] listInt = {12, 13, 100, 128};
+        int[] listInt = {0x0c, 0x0d, 0x64, 0x80};
         String expected = "0c0d64800000000100";
         newHexBuildObject.oct(listInt);
         HexBuilder hexBuilderCapsule = newHexBuildObject.cdr();

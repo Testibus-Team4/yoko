@@ -1,8 +1,8 @@
 = Enabling J.U.L Logging
 
-== Admonition styles
+== How?
 
-An admonition, also known as a notice, helps draw attention to a line or block of text with a special label or icon.
+JUL logging can be enabled with 
 
 Asciidoctor comes with five built-in styles.
 

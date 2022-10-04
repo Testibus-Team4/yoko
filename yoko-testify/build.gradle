@@ -11,5 +11,6 @@ jar {
     instruction 'Bundle-symbolicName', 'testify'
     instruction 'Bundle-DocURL'      , 'https://github.com/OpenLiberty/yoko/wiki'
     instruction 'Bundle-Vendor'      , 'OpenLiberty'
+    instruction 'Sealed'             , 'true'
   }
 }

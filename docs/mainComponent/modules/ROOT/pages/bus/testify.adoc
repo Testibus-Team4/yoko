@@ -1,35 +1,7 @@
 = How the Bus Concept is used in Testfiy
 
-== Ordered list
+== What is the Bus Concept?
+The bus concept is used within Testify to help write JUnit tests for a test that is not single-threaded or on a single processor. The bus ensures effective communication between the different threads and processes for a specific test.
 
-.Ordered list with title
-----
-.Optional title of list
-. Step 1
-. Step 2
-. Step 3
-----
-
-.Optional title of list
-. Step 1
-. Step 2
-. Step 3
-
-== Nested ordered list
-
-.Ordered list with nested levels
-----
-. Step 1
-. Step 2
-.. Step 2a
-.. Step 2b
-... Sub-step 2b
-. Step 3
-----
-
-. Step 1
-. Step 2
-.. Step 2a
-.. Step 2b
-... Sub-step 2b
-. Step 3
+== Bus vs Java Concurrency Synchronisation Utilities
+The reason why the bus was created instead of using one of the many utilities that Java has for concurrency synchronisation is that the utilities Java has usually only works with multiple threads. However, Testify needs to be capable of working with multiple processes as well as multiple threads. This is why the bus concept was implemented within Testify.

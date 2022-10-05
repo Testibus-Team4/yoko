@@ -23,7 +23,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="mainComponent" data-version="1.0.0">
+<div class="nav-container" data-component="mainComponent" data-version="1.5.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -70,14 +70,14 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Features</span>
-    <span class="version">1.0.0</span>
+    <span class="version">1.5.0</span>
   </div>
   <ul class="components">
     <li class="component is-current">
       <a class="title" href="../index.html">Features</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">1.0.0</a>
+          <a href="../index.html">1.5.0</a>
         </li>
       </ul>
     </li>
@@ -106,76 +106,18 @@
 <article class="doc">
 <h1 class="page">How the Bus Concept is used in Testfiy</h1>
 <div class="sect1">
-<h2 id="_ordered_list"><a class="anchor" href="#_ordered_list"></a>Ordered list</h2>
+<h2 id="_what_is_the_bus_concept"><a class="anchor" href="#_what_is_the_bus_concept"></a>What is the Bus Concept?</h2>
 <div class="sectionbody">
-<div class="listingblock">
-<div class="title">Ordered list with title</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">.Optional title of list
-. Step 1
-. Step 2
-. Step 3</code></pre>
-</div>
-</div>
-<div class="olist arabic">
-<div class="title">Optional title of list</div>
-<ol class="arabic">
-<li>
-<p>Step 1</p>
-</li>
-<li>
-<p>Step 2</p>
-</li>
-<li>
-<p>Step 3</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>The bus concept is used within Testify to help write JUnit tests for a test that is not single-threaded or on a single processor. The bus ensures effective communication between the different threads and processes for a specific test.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_nested_ordered_list"><a class="anchor" href="#_nested_ordered_list"></a>Nested ordered list</h2>
+<h2 id="_bus_vs_java_concurrency_synchronisation_utilities"><a class="anchor" href="#_bus_vs_java_concurrency_synchronisation_utilities"></a>Bus vs Java Concurrency Synchronisation Utilities</h2>
 <div class="sectionbody">
-<div class="listingblock">
-<div class="title">Ordered list with nested levels</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">. Step 1
-. Step 2
-.. Step 2a
-.. Step 2b
-... Sub-step 2b
-. Step 3</code></pre>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Step 1</p>
-</li>
-<li>
-<p>Step 2</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Step 2a</p>
-</li>
-<li>
-<p>Step 2b</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>Sub-step 2b</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Step 3</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>The reason why the bus was created instead of using one of the many utilities that Java has for concurrency synchronisation is that the utilities Java has usually only works with multiple threads. However, Testify needs to be capable of working with multiple processes as well as multiple threads. This is why the bus concept was implemented within Testify.</p>
 </div>
 </div>
 </div>

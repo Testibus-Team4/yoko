@@ -14,7 +14,7 @@ An ORB is a middleware which allows program calls to be made from one computer t
 
 == Yoko Architecture 
 
-
+image::docs/images/yoko_architecture.png[]
 
 
 

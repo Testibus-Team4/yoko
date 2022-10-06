@@ -5,5 +5,3 @@
 * xref:verbose-framework.adoc[]
 * xref:jul-logging.adoc[]
 * xref:extending-annotations.adoc[]
-* xref:example.adoc[]
-* xref:example2.adoc[]

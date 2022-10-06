@@ -90,7 +90,7 @@ class MatchersTest{
     @Test
     void testFailure() {
         Matcher<Iterable<Boolean>> object = consistsOf(false, true, false, true);
-        assertThrows(AssertionError.class, () -> object.matches(asList(true, false, true)));
+        assertFalse(object.matches(asList(true, false, true)));
     }
 
     @Test

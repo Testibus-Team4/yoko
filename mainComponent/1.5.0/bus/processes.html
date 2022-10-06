@@ -56,12 +56,6 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../extending-annotations.html">Extending Annotations</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../example.html">Example 1 (Macros)</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../example2.html">Example 2 (Fonts)</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -106,76 +100,80 @@
 <article class="doc">
 <h1 class="page">Using the Bus across Threads and Sub Processes</h1>
 <div class="sect1">
-<h2 id="_unordered_list"><a class="anchor" href="#_unordered_list"></a>Unordered list</h2>
+<h2 id="_simplebus"><a class="anchor" href="#_simplebus"></a>SimpleBus</h2>
 <div class="sectionbody">
-<div class="listingblock">
-<div class="title">Unordered list with title</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">.Optional title of list
-* Item A
-* Item B
-* Item C</code></pre>
+<div class="paragraph">
+<p>SimpleBus is the simple base interface for the bus that most processes that use the bus are based on.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Return Type</th>
+<th class="tableblock halign-center valign-top">Method Name</th>
+<th class="tableblock halign-center valign-top">Parameters</th>
+<th class="tableblock halign-center valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">SimpleBus</p></td>
+<td class="tableblock halign-center valign-top"><div class="literal"><pre>put</pre></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(String key, String value)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">This is similar to how put works on a Map. It puts a value on the bus for the matching key. After it has been put on the bus other threads and processes can access the value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-center valign-top"><div class="literal"><pre>get</pre></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(String key)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Allows a thread or process to wait for a value to be put on the bus that matches the inputted key. Once it arrives on the bus the value is returned.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">SimpleBus</p></td>
+<td class="tableblock halign-center valign-top"><div class="literal"><pre>onMsg</pre></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(String key, Consumer&lt;String&gt; action)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Performs the action inputted as a parameter once the value matching the inputted key arrives on the bus. You would use <code>onMsg</code> over <code>get</code> when you want to do something asynchronous with a value from the bus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-center valign-top"><div class="literal"><pre>hasKey</pre></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(String key)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Returns true if the key inputted currently has a value on the bus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Bus</p></td>
+<td class="tableblock halign-center valign-top"><div class="literal"><pre>forUser</pre></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(String user)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">This is used if you only want a specific user to look at the value placed on the bus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-center valign-top"><div class="literal"><pre>peek</pre></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(String key)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">It returns the value from the key inputted if it currently exists on the bus. If there is no value then null is returned. Unlike <code>get</code> it does not wait for a value to be put on the bus.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="ulist">
-<div class="title">Optional title of list</div>
-<ul>
-<li>
-<p>Item A</p>
-</li>
-<li>
-<p>Item B</p>
-</li>
-<li>
-<p>Item C</p>
-</li>
-</ul>
+<div class="sect1">
+<h2 id="_userbus"><a class="anchor" href="#_userbus"></a>UserBus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>UserBus has a similar interface to SimpleBus The main difference is that on the UserBus, the message you put and get from the bus is specific to a particular user. Within the UserBus interface, there is a <code>String user()</code> method which returns the name given to the user of the bus.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_nested_unordered_list"><a class="anchor" href="#_nested_unordered_list"></a>Nested unordered list</h2>
+<h2 id="_eventbus"><a class="anchor" href="#_eventbus"></a>EventBus</h2>
 <div class="sectionbody">
-<div class="listingblock">
-<div class="title">Unordered list with nested levels</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* Item A
-* Item B
-** Item B1
-** Item B2
-*** Sub-item of B2
-* Item C</code></pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Item A</p>
-</li>
-<li>
-<p>Item B</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Item B1</p>
-</li>
-<li>
-<p>Item B2</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Sub-item of B2</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Item C</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>EventBus is a more generic version of the SimpleBus, allowing us to no longer be restricted to just using strings on the bus. Oher then having a generic object type for the method, the rest of the interface is the same as SimpleBus. It also improves the SimpleBus by allowing you to have type safe key-value pairs.</p>
 </div>
 </div>
 </div>

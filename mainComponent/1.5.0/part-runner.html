@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Extending Annotations :: Testify Documentation</title>
+    <title>ConfigurePartRunner :: Testify Documentation</title>
     <meta name="generator" content="Antora 3.1.1">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -50,7 +50,7 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="part-runner.html">ConfigurePartRunner</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -59,7 +59,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="jul-logging.html">Enabling J.U.L Logging</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="extending-annotations.html">Extending Annotations</a>
   </li>
 </ul>
@@ -93,7 +93,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Features</a></li>
-    <li><a href="extending-annotations.html">Extending Annotations</a></li>
+    <li><a href="part-runner.html">ConfigurePartRunner</a></li>
   </ul>
 </nav>
   
@@ -103,31 +103,15 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Extending Annotations</h1>
-<div class="sect1">
-<h2 id="_sidebar_block"><a class="anchor" href="#_sidebar_block"></a>Sidebar block</h2>
-<div class="sectionbody">
+<h1 class="page">ConfigurePartRunner</h1>
 <div class="paragraph">
-<p>A sidebar can be titled and contain any type of content such as source code and images.</p>
+<p>We can use part runner as a parameter in the test methods. The runner allows to us to fork work on another thread or JVM (Java Virtual Machine). Below is an example where the JVM = runner.useNewJVMWhenForking(). <strong>*</strong>*</p>
 </div>
-<div class="listingblock">
-<div class="title">Sidebar</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">.Optional title of sidebar
-****
-Sidebars are used to visually separate short, auxiliary bits of content that supplement the main text.
-****</code></pre>
-</div>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">Optional title of sidebar</div>
 <div class="paragraph">
-<p>Sidebars are used to visually separate short, auxiliary bits of content that supplement the main text.</p>
+<p>Part runner also allows us to use the bus to communicate with the parts of the program that have been forked. This allows for a lot more detail to be passed from the remote process to the test cases.</p>
 </div>
-</div>
-</div>
-</div>
+<div class="paragraph">
+<p>All these features of part runner allows you to focus on testing the behaviour which you want to test without dealing with the difficulties of setting up continuous integeation and being tripped up with differneces in developer machine. <strong>*</strong>*</p>
 </div>
 </article>
   </div>

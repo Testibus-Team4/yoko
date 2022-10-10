@@ -1,20 +1,7 @@
-= Antora Demo Site and Playbook Project
-:url-project: https://antora.org
-:url-org: https://gitlab.com/antora
-:url-group: {url-org}/demo
-:url-repo: {url-group}/docs-site
-:url-demo-playbook: {url-repo}/blob/main/antora-playbook.yml
-:url-antora-docs: https://docs.antora.org/antora/latest
-:url-docs-quickstart: {url-antora-docs}/install-and-run-quickstart/
-:url-docs-playbook: {url-antora-docs}/playbook/
-:url-docs-run: {url-antora-docs}/run-antora/
-:url-opendevise: https://opendevise.com
+= Testify Docs Site and Playbook Project
 
-This is the playbook project for the Antora demo site.
-You can view the site produced by the Antora playbook ([.path]_antora-playbook.yml_) stored in this project at https://antora.gitlab.io/demo/docs-site.
-
-You can also use this project and the demo documentation components to generate the demo site on your own computer
-To use the demo materials and generate the demo site locally, follow the steps in the {url-docs-quickstart}[Antora quickstart].
+This is the playbook project for the Testify docs site using Anotrra.
+You can view the site produced by the Antora playbook ([.path]_antora-playbook.yml_) stored in this project at https://testibus-team4.github.io/yoko
 
 == Antora Playbook
 

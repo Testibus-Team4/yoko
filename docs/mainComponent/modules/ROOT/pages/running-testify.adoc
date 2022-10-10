@@ -1,0 +1,9 @@
+= How To Run Testify
+
+== Ading Tests to Testify
+
+== Steps to build Testify
+. Go to root the root of the project directory
+. Run `/gradlew yoko-testify:build`
+
+== Understanding Testify Logs

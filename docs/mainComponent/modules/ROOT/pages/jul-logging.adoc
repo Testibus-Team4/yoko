@@ -1,4 +1,4 @@
-= Enabling Java Logging
+= Enabling J.U.L Logging
 
 
 ****
@@ -7,8 +7,10 @@ A Logger object is used to log messages for a particular system or application c
 
 == Why is Logging Used?
 
-We must use @logging to allow tracing in order to see what is happening within a system. This can be found in the @logging annotation in the 'jupiter' package. When a class or test method has the @logging annotation, the specified java.util.logging is enabled for it.
+To see what is happening within a system, we must use @Logging to allow tracing, which can be found in the @Logging annotation, in the 'jupiter' package. When a class or test method has the @Logging annotation, the specified java.util.logging is enabled for it.
 
+Since other logging frameworks (Log4J, SLF4J) are j.u.l-compatible, these  should work for them, but have not been tested. 
+ 
 Upon turning on logging and running tests, all logging is collected and printed out - logging up to where the test began and after the test is run. Testify captures any enabled logging into a buffer, and flushes the buffer to the console - before and after a test. 
 
 == Formatting
@@ -23,4 +25,4 @@ Instead of timestamps with each logging statement, Testify computes and prints e
 
 == Drawback of Testify
 
-Looking at the thread key, we can see that there is only one thread involved on the client. Testify does not yet have remote part logging implemented yet, so you will not get any trace from the server. The eventual idea is that we collect trace from the server. 
+Looking at the thread key, we can see that there is only one thread involved on the client. Testify does not have remote part logging implemented yet, so you will not get any trace from the server. The eventual idea is that we collect trace from the server. 

@@ -1,65 +1,26 @@
-= Enabling J.U.L Logging
+= Enabling Java Logging
 
-== Admonition styles
 
-An admonition, also known as a notice, helps draw attention to a line or block of text with a special label or icon.
+****
+A Logger object is used to log messages for a particular system or application component. In other words, it is a means of tracking events that happen when some software runs by capturing and persisting important data and making it available for analysis at any point in time. 
+****
 
-Asciidoctor comes with five built-in styles.
+== Why is Logging Used?
 
-* NOTE
-* TIP
-* IMPORTANT
-* CAUTION
-* WARNING
+We must use @logging to allow tracing in order to see what is happening within a system. This can be found in the @logging annotation in the 'jupiter' package. When a class or test method has the @logging annotation, the specified java.util.logging is enabled for it.
 
-== Basic admonition
+Upon turning on logging and running tests, all logging is collected and printed out - logging up to where the test began and after the test is run. Testify captures any enabled logging into a buffer, and flushes the buffer to the console - before and after a test. 
 
-.Basic admonitions
-----
-CAUTION: Don't stick forks in electric sockets.
+== Formatting
 
-TIP: After someone sticks a fork in a socket, you'll need to reset the circuit in the breaker box in the dark and scary basement.
+There are various different formatting options that are used for logging. Testify tells us how many threads are involved in logging while your tests are running.
 
-WARNING: Never go into the basement.
+NOTE: Testify prints a key to threads and gives them easily distinguishable nicknames (AAA, BBB, etc) - each with their own unique ID's.  
 
-IMPORTANT: A monster lives in the basement.
+ 
+Instead of timestamps with each logging statement, Testify computes and prints elapsed time which tells us how long into the test we are. This is simply because it is the most helpful when comparing the behaviour between two tests to see which test takes longer to reach a certain point, easing the diagnosis of a potential problem.
 
-NOTE: If you go into the basement, see if you can find Kenny's orange parka.
-----
 
-CAUTION: Don't stick forks in electric sockets.
+== Drawback of Testify
 
-TIP: After someone sticks a fork in a socket, you'll need to reset the circuit in the breaker box in the dark and scary basement.
-
-WARNING: Never go into the basement.
-
-IMPORTANT: A monster lives in the basement.
-
-NOTE: If you go into the basement, see if you can find Kenny's orange parka.
-
-== Complex admonition
-
-.Example block masquerading as an admonition
-----
-[IMPORTANT]
-.Optional title
-====
-Use an example block to create an admonition that contains complex content, such as (but not limited to):
-
-* Lists
-* Multiple paragraphs
-* Source code
-* Images
-====
-----
-
-[IMPORTANT]
-.Optional title
-====
-Use an example block to create an admonition that contains complex content, such as (but not limited to):
-
-* Lists
-* Multiple paragraphs
-* Source code
-* Images
-====
+Looking at the thread key, we can see that there is only one thread involved on the client. Testify does not yet have remote part logging implemented yet, so you will not get any trace from the server. The eventual idea is that we collect trace from the server. 

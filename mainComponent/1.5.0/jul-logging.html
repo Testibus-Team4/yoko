@@ -119,7 +119,10 @@
 <h2 id="_why_is_logging_used"><a class="anchor" href="#_why_is_logging_used"></a>Why is Logging Used?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>We must use @logging to allow tracing in order to see what is happening within a system. This can be found in the @logging annotation in the 'jupiter' package. When a class or test method has the @logging annotation, the specified java.util.logging is enabled for it.</p>
+<p>To see what is happening within a system, we must use @Logging to allow tracing, which can be found in the @Logging annotation, in the 'jupiter' package. When a class or test method has the @Logging annotation, the specified java.util.logging is enabled for it.</p>
+</div>
+<div class="paragraph">
+<p>Since other logging frameworks (Log4J, SLF4J) are j.u.l-compatible, these  should work for them, but have not been tested.</p>
 </div>
 <div class="paragraph">
 <p>Upon turning on logging and running tests, all logging is collected and printed out - logging up to where the test began and after the test is run. Testify captures any enabled logging into a buffer, and flushes the buffer to the console - before and after a test.</p>

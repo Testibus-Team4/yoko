@@ -54,13 +54,13 @@ class ByteArrayMatchersTest {
     @Test
     void testMatchesHex() {
         Matcher<byte[]> baseMatcherObject = matchesHex("0c0d647F0c");
-        assertTrue(baseMatcherObject.matches(new byte[]{12, 13, 100, 127, 0xc}));
+        assertTrue(baseMatcherObject.matches(new byte[]{0x0c, 0x0d, 0x64, 0x7f, 0xc}));
     }
 
     @Test
     void testNotMatchesHex() {
         Matcher<byte[]> baseMatcherObject = matchesHex("0c0d647F0c");
-        assertFalse(baseMatcherObject.matches(new byte[]{12, 13, 100}));
+        assertFalse(baseMatcherObject.matches(new byte[]{0x0c, 0x0d, 0x64}));
     }
 
     @Test
@@ -77,7 +77,7 @@ class ByteArrayMatchersTest {
         Matcher<byte[]> baseMatcherObject = matchesHex("0c0d647F");
 
         Description testDescription = new TestDescription();
-        baseMatcherObject.describeMismatch(new byte[]{12, 13, 100}, testDescription);
+        baseMatcherObject.describeMismatch(new byte[]{0x0c, 0x0d, 0x64}, testDescription);
         assertThat(testDescription.toString(), is("actual bytes differed at byte 0x3" +
                                                         "\ncommon prefix:\n\t\t0c0d64\nexpected suffix:" +
                                                         "\n\t\t      7F\nactual suffix:\n\t\t      \n"));

@@ -1,6 +1,6 @@
 = Testify Docs Site and Playbook Project
 
-This is the playbook project for the Testify docs site using Anotrra.
+This is the playbook project for the Testify docs site using Antora.
 You can view the site produced by the Antora playbook ([.path]_antora-playbook.yml_) stored in this project at https://testibus-team4.github.io/yoko .
 
 == Antora Playbook
@@ -10,7 +10,14 @@ It contains the instructions a user wants to relay to the Antora site generator.
 These instructions include the content Antora should collect and the UI it should apply to the generated site.
 
 The file [.path]_antora-playbook.yml_ in this repository is the playbook used to produce the demo site.
-It tells Antora where to find the Componets with the content for the site and where to find the default UI.
+It tells Antora where to find the Components with the content for the site and where to find the default UI theme.
 
 == Generate Site
-You can make changes to the repo and view the local changes by generating a local site. After cloning this playbook project repository to your computer you can generate the demo site by using the command `antora --fetch antora-playbook.yml` within the same directory as the antora playbook. To be able to run the command you need to install antora first. Installation instructions can be found at https://docs.antora.org/antora/latest/install/install-antora/ .
+You can make changes to the repository and view the local changes by generating a local site. After cloning this repository to your computer you can generate a local site by using the command `antora --fetch antora-playbook.yml` within the same directory as the antora playbook. To be able to run the command you need to install antora first. Installation instructions can be found at https://docs.antora.org/antora/latest/install/install-antora/ .
+
+== Component
+[.path]_mainComponent_ is the documentation component for the Testify docs site. To add any pages to the docs, then you would create new `.adoc` file within [.path]_mainComponent_/modules/ROOT_. Then to decide the order that the new page will appear in the contents page, you can add the filename to the [.path]_nav.adoc_ file in the order you want the page to be in.
+
+== Supplemental-UI
+If there are certain parts of the UI which you would like to change from the default UI, then you can make the changes within the directory [.path]_supplemental-ui/partials_. The original theme for the UI can be found at https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable .
+

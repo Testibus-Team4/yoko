@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Using the Bus across Threads and Sub Processes :: Testify Documentation</title>
+    <meta name="generator" content="Antora 3.1.1">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Testify Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+   
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="mainComponent" data-version="1.5.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Features</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Testify</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../testify-guide.html">Implementing Testify to a RMI Java Application</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="bus-concept.html">Bus Concept</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="bus-processes.html">Using the Bus across Threads and Sub Processes</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../extending-annotations.html">Extending Annotations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part-runner.html">How to use @ConfigurePartRunner</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../jul-logging.html">Enabling J.U.L Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Features</span>
+    <span class="version">1.5.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Features</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1.5.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Features</a></li>
+    <li><a href="bus-concept.html">Bus Concept</a></li>
+    <li><a href="bus-processes.html">Using the Bus across Threads and Sub Processes</a></li>
+  </ul>
+</nav>
+  
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Using the Bus across Threads and Sub Processes</h1>
+<div class="sect1">
+<h2 id="_simplebus"><a class="anchor" href="#_simplebus"></a>SimpleBus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>SimpleBus is the simple base interface for the bus that most processes that use the bus are based on.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Return Type</th>
+<th class="tableblock halign-center valign-top">Method Name</th>
+<th class="tableblock halign-center valign-top">Parameters</th>
+<th class="tableblock halign-center valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">SimpleBus</p></td>
+<td class="tableblock halign-center valign-top"><div class="literal"><pre>put</pre></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(String key, String value)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">This is similar to how put works on a Map. It puts a value on the bus for the matching key. After it has been put on the bus other threads and processes can access the value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-center valign-top"><div class="literal"><pre>get</pre></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(String key)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Allows a thread or process to wait for a value to be put on the bus that matches the inputted key. Once it arrives on the bus the value is returned.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">SimpleBus</p></td>
+<td class="tableblock halign-center valign-top"><div class="literal"><pre>onMsg</pre></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(String key, Consumer&lt;String&gt; action)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Performs the action inputted as a parameter once the value matching the inputted key arrives on the bus. You would use <code>onMsg</code> over <code>get</code> when you want to do something asynchronous with a value from the bus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-center valign-top"><div class="literal"><pre>hasKey</pre></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(String key)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Returns true if the key inputted currently has a value on the bus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Bus</p></td>
+<td class="tableblock halign-center valign-top"><div class="literal"><pre>forUser</pre></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(String user)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">This is used if you only want a specific user to look at the value placed on the bus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-center valign-top"><div class="literal"><pre>peek</pre></div></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(String key)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">It returns the value from the key inputted if it currently exists on the bus. If there is no value then null is returned. Unlike <code>get</code> it does not wait for a value to be put on the bus.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_userbus"><a class="anchor" href="#_userbus"></a>UserBus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>UserBus has a similar interface to SimpleBus The main difference is that on the UserBus, the message you put and get from the bus is specific to a particular user. Within the UserBus interface, there is a <code>String user()</code> method which returns the name given to the user of the bus.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_eventbus"><a class="anchor" href="#_eventbus"></a>EventBus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>EventBus is a more generic version of the SimpleBus, allowing us to no longer be restricted to just using strings on the bus. Oher then having a generic object type for the method, the rest of the interface is the same as SimpleBus. It also improves the SimpleBus by allowing you to have type safe key-value pairs.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

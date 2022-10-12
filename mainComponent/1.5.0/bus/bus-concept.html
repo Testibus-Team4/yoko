@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Bus Concept :: Testify Documentation</title>
+    <meta name="generator" content="Antora 3.1.1">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Testify Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+   
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="mainComponent" data-version="1.5.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Features</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Testify</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../testify-guide.html">Implementing Testify to a RMI Java Application</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="bus-concept.html">Bus Concept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="bus-processes.html">Using the Bus across Threads and Sub Processes</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../extending-annotations.html">Extending Annotations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part-runner.html">How to use @ConfigurePartRunner</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../jul-logging.html">Enabling J.U.L Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Features</span>
+    <span class="version">1.5.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Features</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1.5.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Features</a></li>
+    <li><a href="bus-concept.html">Bus Concept</a></li>
+  </ul>
+</nav>
+  
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Bus Concept</h1>
+<div class="sect1">
+<h2 id="_what_is_the_bus_concept"><a class="anchor" href="#_what_is_the_bus_concept"></a>What is the Bus Concept?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The bus concept is used within Testify to help write JUnit tests for a test that is not single-threaded or on a single processor. The bus ensures effective communication between the different threads and processes for a specific test.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bus_vs_java_concurrency_synchronisation_utilities"><a class="anchor" href="#_bus_vs_java_concurrency_synchronisation_utilities"></a>Bus vs Java Concurrency Synchronisation Utilities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The reason why the bus was created instead of using one of the many utilities that Java has for concurrency synchronisation is that the utilities Java has usually only works with multiple threads. However, Testify needs to be capable of working with multiple processes as well as multiple threads. This is why the bus concept was implemented within Testify.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://github.com/Testibus-Team4/yoko/blob/docs/docs/mainComponent/images/bus_diagram.png?raw=true" alt="Bus Diagram">
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

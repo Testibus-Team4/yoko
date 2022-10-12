@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>@ConfigurePartRunner :: Testify Documentation</title>
+    <title>@ConfigurePartRunner Annotation :: Testify Documentation</title>
     <meta name="generator" content="Antora 3.1.1">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -51,7 +51,7 @@
 </ul>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="part-runner.html">@ConfigurePartRunner</a>
+    <a class="nav-link" href="part-runner.html">@ConfigurePartRunner Annotation</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="verbose-framework.html">Verbose Framework</a>
@@ -93,7 +93,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Features</a></li>
-    <li><a href="part-runner.html">@ConfigurePartRunner</a></li>
+    <li><a href="part-runner.html">@ConfigurePartRunner Annotation</a></li>
   </ul>
 </nav>
   
@@ -103,14 +103,14 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">@ConfigurePartRunner</h1>
+<h1 class="page">@ConfigurePartRunner Annotation</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>We can use PartRunner as a parameter in test methods. The runner allows to us to fork methods onto another thread or JVM (Java Virtual Machine).</p>
 </div>
 <div class="paragraph">
-<p>Part runner also allows us to use the bus to communicate with the parts of the program that have been forked. This allows for a lot more detail to be passed from the remote process to the test cases.</p>
+<p>PartRunner also allows us to use the bus to communicate with the parts of the program that have been forked. This allows for a lot more detail to be passed from the remote process to the test cases.</p>
 </div>
 </div>
 </div>
@@ -121,7 +121,46 @@
 <p>Use a new JVM when forking = <code>runner.useNewJVMWhenForking()</code></p>
 </div>
 <div class="paragraph">
-<p>Use a new thread when forking = ``</p>
+<p>Use a new thread when forking = <code>runner.fork()</code></p>
+</div>
+<div class="paragraph">
+<p>Below is a code example of using the <code>@ConfigurePartRunner</code> annotation:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>@ConfigurePartRunner
+public class InitialTest {
+    static int port;
+    private static String lookupURL;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>    @BeforeAll
+    static void setup(PartRunner runner) {
+        // When forking use new Java Virtual Machine
+        runner.useNewJVMWhenForking();
+        // Create a new part called HelloServer
+        runner.fork("HelloServer",
+                // Tell Testify how to start this new part
+                InitialTest::runServer,
+                // Tell Testify how to stop this part
+                bus -&gt; bus
+                        // Send a stp request
+                        .put(STOP_REQUESTED, 0)
+                        // Wait for stopped server response
+                        .get(SERVER_STOPPED));
+        // Wait for the server to start
+        port = runner.bus("HelloServer").get(SERVER_STARTED);
+        lookupURL = "//localhost:" + port + "/MessengerService";
+        System.out.println(lookupURL);
+    }
+}</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>

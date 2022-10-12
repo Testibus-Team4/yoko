@@ -115,22 +115,22 @@
 <ol class="arabic">
 <li>
 <p>Clone the following Yoko repository</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="ulist">
+<ul>
 <li>
 <p><code>git clone <a href="https://github.com/Testibus-Team4/yoko.git" class="bare">https://github.com/Testibus-Team4/yoko.git</a></code></p>
 </li>
-</ol>
+</ul>
 </div>
 </li>
 <li>
 <p>Navigate to the <em class="path">build.gradle</em> file, and add the following code to the dependencies section of the file:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="ulist">
+<ul>
 <li>
 <p><code>testImplementation 'org.apache.yoko:yoko-testify:1.5.0.9cce293956'</code></p>
 </li>
-</ol>
+</ul>
 </div>
 </li>
 <li>
@@ -141,8 +141,8 @@
 </li>
 <li>
 <p>Add the following imports into intitialTest.java:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="ulist">
+<ul>
 <li>
 <p><code>import testify.bus.Bus;</code></p>
 </li>
@@ -155,20 +155,20 @@
 <li>
 <p><code>import testify.parts.PartRunner;</code></p>
 </li>
-</ol>
+</ul>
 </div>
 </li>
 <li>
 <p>You are now ready to build your application using gradle and see how Testify has helped testing. In the root folder of the Yoko repository, run the following commands:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="ulist">
+<ul>
 <li>
 <p>To build <strong>with</strong> tests use: <code>./gradlew build</code></p>
 </li>
 <li>
 <p>To build <strong>without</strong> tests use: <code>./gradlew build -x test</code></p>
 </li>
-</ol>
+</ul>
 </div>
 </li>
 </ol>

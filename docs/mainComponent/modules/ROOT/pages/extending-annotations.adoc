@@ -5,7 +5,7 @@ Annotations are a form of metadata, which are used to provide data about a progr
 ****
 
 ****
-The Annotation system in Java is extensible, as you can crate your own annotations with their own meanings. You can also tell the compiler where these annotations go. 
+The Annotation system in Java is extensible, as you can create your own annotations with their own meanings. You can also tell the compiler where these annotations go. 
 ****
 
 == Examples
@@ -32,7 +32,7 @@ Testify provides some annotations, two of which are:
 * *@RetriedTest*
 
 ****
-The *@ConfigurePartRunner* annotation allows you to get a part runner in your setup and your test methods. Having the @ConfigurePartRunner annotation is simply a shorthand for including @ExtendWith(PartRunnerExtension.class) without even making that class available. This essentially tells JUnit to load up the PartRunnerExtension upon running the class, and to use any extension points that are in this class in the course of running any tests. 
+The *@ConfigurePartRunner* annotation allows you to get a part runner in your setup and your test methods. Having the @ConfigurePartRunner annotation is simply a shorthand for including @ExtendWith(PartRunnerExtension.class) without making that class available. This essentially tells JUnit to load up the PartRunnerExtension upon running the class, and to use any extension points that are in this class in the course of running any tests. 
 
 Further information regarding this annotation has been included in the file labelled 'How to Use @ConfigurePartRunner' in this documentation.
 ****

@@ -68,6 +68,6 @@ In intitialTest.java the tests are sending and getting events from methods using
     * When the server can shut down (`STOP_REQUESTED`)
     * When the server shut down (`SERVER_STOPPED`)
 
-This is all done in the setup() method which also is annotated using @BeforeAll - this means that nothing will happen until this method is completed. The most important method is runServer() which takes in bus as a parameter. In this method everything is declared and then passed to the setup() method inside the runner.fork() method as a parameter.
+This is all done in the setup() method which also is annotated using `@BeforeAll` - this means that nothing will happen until this method is completed. The most important method is runServer() which takes in bus as a parameter. In this method everything is declared and then passed to the setup() method inside the runner.fork() method as a parameter.
 
 

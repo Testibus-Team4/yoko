@@ -15,7 +15,6 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.apache.yoko:yoko-testify:1.5.0.9cce293956'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
     testRuntimeOnly 'org.junit.platform:junit-platform-runner:1.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'

@@ -22,6 +22,17 @@ public class InitialTest {
     private static String lookupURL;
 
     @BeforeAll
+    private static void logging() {
+        // Next 6 lines specific to RMI serialization and logging
+        final ConsoleHandler consoleHandler = new ConsoleHandler();
+        consoleHandler.setLevel(Level.FINEST);
+        consoleHandler.setFormatter(new SimpleFormatter());
+        final Logger serial = Logger.getLogger("java.io.serialization");
+        serial.setLevel(Level.FINEST);
+        serial.addHandler(consoleHandler);
+    }
+
+    @BeforeAll
     static void setup(PartRunner runner) {
         // When forking use new Java Virtual Machine
         runner.useNewJVMWhenForking();
@@ -43,14 +54,7 @@ public class InitialTest {
 
     // This method runs in the server process
     private static void runServer(Bus bus) {
-        // Line 46-51 specific to RMI serialization and logging
-        final ConsoleHandler consoleHandler = new ConsoleHandler();
-        consoleHandler.setLevel(Level.FINEST);
-        consoleHandler.setFormatter(new SimpleFormatter());
-        final Logger serial = Logger.getLogger("java.io.serialization");
-        serial.setLevel(Level.FINEST);
-        serial.addHandler(consoleHandler);
-        int port = HelloServer.start(0);
+        logging();
         // Notify the test process that the server has now started on a particular port
         bus.put(SERVER_STARTED, port);
         System.out.println(port);

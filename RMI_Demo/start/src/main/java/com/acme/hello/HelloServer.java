@@ -15,7 +15,7 @@ import java.util.Optional;
 public class HelloServer {
     static {
         // allow the registry to hold acme objects
-        System.setProperty("sun.rmi.registry.registryFilter", "java.**;com.acme.**");
+//        System.setProperty("sun.rmi.registry.registryFilter", "java.**;com.acme.**");
     }
     static HelloImpl impl;
     static Remote stub;

@@ -244,18 +244,15 @@ import testify.parts.PartRunner;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>+
-Also now you can go ahead and remove the call for <code>logging()</code> from the <code>testHello()</code> method. This is because you have now called it in the <code>runServer()</code> method.</p>
+<p>Also now you can go ahead and remove the call for <code>logging()</code> from the <code>testHello()</code> method. This is because you have now called it in the <code>runServer()</code> method.</p>
 </div>
 <div class="paragraph">
 <p>The above code will call on the <code>Bus</code> parameter. This allows us to use the methods within the bus and call on and use <code>put()</code> and also <code>get()</code>. <code>put()</code> will put the <code>SERVER_STARTED</code> event and the port number on the bus. <code>get()</code> will get the <code>STOP_REQUESTED</code> event from the bus. This allows the client and server communicate with each other with more detail. Using Bus also allows us to know how long a server takes to start, when the client starts to interact with the server and also when the server shuts down.</p>
 </div>
-<div class="paragraph">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p>Since you are now able to send events and messages between the client and server; you can send the port across too. This means you can go ahead and replace:</p>
-</div>
-<div class="paragraph">
-<p>+</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre>    static int port = 1099;</pre>
@@ -264,16 +261,12 @@ Also now you can go ahead and remove the call for <code>logging()</code> from th
 <div class="paragraph">
 <p>with:</p>
 </div>
-<div class="paragraph">
-<p>+</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    static int port;</code></pre>
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>You are now ready to build your application using gradle and see how Testify has helped testing. In the <em class="path">start</em>` repository, run either of following commands:</p>
 <div class="ulist">

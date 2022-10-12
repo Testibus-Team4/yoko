@@ -4,7 +4,7 @@ site:
 content:
   sources:
   - url: https://github.com/Testibus-Team4/yoko.git
-    branches: [docs]
+    branches: HEAD
     start_path: docs/mainComponent
 ui:
   supplemental_files: ./supplemental-ui

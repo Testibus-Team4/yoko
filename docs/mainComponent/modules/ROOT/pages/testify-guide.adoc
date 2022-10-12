@@ -18,13 +18,13 @@ cd yoko
 cd RMI_Demo/start
 ----
 
-. Find the `[.path]_build.gradle_` within that repository, and add the following code to the `dependencies` section of the file:
+Find the `[.path]_build.gradle_` within that repository, and add the following code to the `dependencies` section of the file:
 +
 [,java]
 ----
 testImplementation 'org.apache.yoko:yoko-testify:1.5.0.9cce293956'
 ----
-+
+
 Your `[.path]_build.gradle_` file should now look like this:
 +
 [java]
@@ -36,7 +36,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 }
 ----
-+
+
 The dependency will be added to the project and the Testify library will be available for use.
 
 . Refresh the `[.path]_build.gradle_` dependencies using the following command:
@@ -90,28 +90,18 @@ import testify.parts.PartRunner;
 ----
 
 . The above code will call on the `PartRunner` parameter. This allows us to use the methods within part runner and call on and use `useNewJVMWhenForking()` and also `fork()`. `useNewJVMWhenForking()` name means to use a new Java Virtual Machine every time something is forked. `fork()` calls upon the `runServer()` method. 
-+
-Now lets implement the `runServer()` method. This method will be used to start the server. Add the following code to the `InitialTest` class:
-+
-[,java]
-----
-private static void runServer(Bus bus) {
-    int port = HelloServer.start(0);
-    // Notify the test process that the server has now started on a particular port
-    bus.put(SERVER_STARTED, port);
     System.out.println(port);
     // Get STOP_REQUESTED event from the bus
-    bus.get(STOP_REQUESTED);
     // call stop method from HelloServer class
     HelloServer.stop();
     // Send SERVER_STOPPED event and port back to the client
     bus.put(SERVER_STOPPED, port);
 }
 ----
-+
+
 The above code will call on the `Bus` parameter. This allows us to use the methods within the bus and call on and use `put()` and also `get()`. `put()` will put the `SERVER_STARTED` event and the port number on the bus. `get()` will get the `STOP_REQUESTED` event from the bus. This allows the client and server communicate with each other with more detail. Using Bus also allows us to know how long a server takes to start, when the client starts to interact with the server and also when the server shuts down. 
 
-. Since you are now able to send events and messages between the client and server; you can send the port across too. This means you can go ahead and replace:
+Since you are now able to send events and messages between the client and server; you can send the port across too. This means you can go ahead and replace:
 +
 [java]
 ----

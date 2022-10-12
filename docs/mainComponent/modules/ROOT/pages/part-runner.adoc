@@ -1,4 +1,4 @@
-= @ConfigurePartRunner Annotation
+= How to use @ConfigurePartRunner
 
 We can use PartRunner as a parameter in test methods. The runner allows to us to fork methods onto another thread or JVM (Java Virtual Machine). 
 

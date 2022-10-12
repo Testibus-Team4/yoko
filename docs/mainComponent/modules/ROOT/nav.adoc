@@ -1,8 +1,7 @@
 * xref:index.adoc[]
 * xref:running-testify.adoc[]
-* Bus Concept
-** xref:bus/testify.adoc[]
-** xref:bus/processes.adoc[]
-* xref:part-runner.adoc[]
-* xref:jul-logging.adoc[]
+* xref:bus/bus-concept.adoc.adoc[]
+** xref:bus/bus-processes.adoc[]
 * xref:extending-annotations.adoc[]
+** xref:part-runner.adoc[]
+* xref:jul-logging.adoc[]

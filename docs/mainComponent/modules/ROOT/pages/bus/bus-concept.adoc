@@ -1,4 +1,4 @@
-= How the Bus Concept is used in Testify
+= Bus Concept
 
 == What is the Bus Concept?
 The bus concept is used within Testify to help write JUnit tests for a test that is not single-threaded or on a single processor. The bus ensures effective communication between the different threads and processes for a specific test.

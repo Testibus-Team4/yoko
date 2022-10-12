@@ -1,6 +1,6 @@
 * xref:index.adoc[]
-* xref:running-testify.adoc[]
-* xref:bus/bus-concept.adoc.adoc[]
+* xref:testify-guide.adoc[]
+* xref:bus/bus-concept.adoc[]
 ** xref:bus/bus-processes.adoc[]
 * xref:extending-annotations.adoc[]
 ** xref:part-runner.adoc[]

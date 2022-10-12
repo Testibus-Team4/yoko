@@ -96,13 +96,6 @@ Now lets implement the `runServer()` method. This method will be used to start t
 [,java]
 ----
 private static void runServer(Bus bus) {
-    // Line 46-51 specific to RMI serialization and logging
-    final ConsoleHandler consoleHandler = new ConsoleHandler();
-    consoleHandler.setLevel(Level.FINEST);
-    consoleHandler.setFormatter(new SimpleFormatter());
-    final Logger serial = Logger.getLogger("java.io.serialization");
-    serial.setLevel(Level.FINEST);
-    serial.addHandler(consoleHandler);
     int port = HelloServer.start(0);
     // Notify the test process that the server has now started on a particular port
     bus.put(SERVER_STARTED, port);

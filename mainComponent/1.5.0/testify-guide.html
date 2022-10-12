@@ -130,14 +130,8 @@ cd yoko</code></pre>
 </div>
 </div>
 </li>
-</ol>
-</div>
-<div class="paragraph">
+<li>
 <p>Find the <code><em class="path">build.gradle</em></code> within that repository, and add the following code to the <code>dependencies</code> section of the file:</p>
-</div>
-<div class="paragraph">
-<p>+</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">testImplementation 'org.apache.yoko:yoko-testify:1.5.0.9cce293956'</code></pre>
@@ -145,9 +139,6 @@ cd yoko</code></pre>
 </div>
 <div class="paragraph">
 <p>Your <code><em class="path">build.gradle</em></code> file should now look like this:</p>
-</div>
-<div class="paragraph">
-<p>+</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -162,8 +153,7 @@ cd yoko</code></pre>
 <div class="paragraph">
 <p>The dependency will be added to the project and the Testify library will be available for use.</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Refresh the <code><em class="path">build.gradle</em></code> dependencies using the following command:</p>
 <div class="listingblock">
@@ -222,9 +212,9 @@ import testify.parts.PartRunner;</code></pre>
 </li>
 <li>
 <p>The above code will call on the <code>PartRunner</code> parameter. This allows us to use the methods within part runner and call on and use <code>useNewJVMWhenForking()</code> and also <code>fork()</code>. <code>useNewJVMWhenForking()</code> name means to use a new Java Virtual Machine every time something is forked. <code>fork()</code> calls upon the <code>runServer()</code> method.</p>
-</li>
-<li>
+<div class="paragraph">
 <p>Now lets implement the <code>runServer()</code> method. This method will be used to start the server. Add the following code to the <code>InitialTest</code> class:</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">private static void runServer(Bus bus) {
@@ -248,18 +238,12 @@ import testify.parts.PartRunner;</code></pre>
 }</code></pre>
 </div>
 </div>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <p>The above code will call on the <code>Bus</code> parameter. This allows us to use the methods within the bus and call on and use <code>put()</code> and also <code>get()</code>. <code>put()</code> will put the <code>SERVER_STARTED</code> event and the port number on the bus. <code>get()</code> will get the <code>STOP_REQUESTED</code> event from the bus. This allows the client and server communicate with each other with more detail. Using Bus also allows us to know how long a server takes to start, when the client starts to interact with the server and also when the server shuts down.</p>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>Since you are now able to send events and messages between the client and server; you can send the port across too. This means you can go ahead and replace:</p>
-</div>
-<div class="paragraph">
-<p>+</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre>    static int port = 1099;</pre>
@@ -268,16 +252,12 @@ import testify.parts.PartRunner;</code></pre>
 <div class="paragraph">
 <p>with:</p>
 </div>
-<div class="paragraph">
-<p>+</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    static int port;</code></pre>
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>You are now ready to build your application using gradle and see how Testify has helped testing. In the <em class="path">start</em>` repository, run either of following commands:</p>
 <div class="ulist">

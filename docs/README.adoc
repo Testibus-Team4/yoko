@@ -10,10 +10,13 @@ It contains the instructions a user wants to relay to the Antora site generator.
 These instructions include the content Antora should collect and the UI it should apply to the generated site.
 
 The file [.path]_antora-playbook.yml_ in this repository is the playbook used to produce the demo site.
-It tells Antora where to find the Components with the content for the site and where to find the default UI theme.
+It tells Antora where to find the components with the content for the site and where to find the default UI theme.
+
+== Component
+[.path]_mainComponent_ is the documentation component for the Testify docs site. To add any pages to the docs, then you would create new `.adoc` file within [.path]_mainComponent_/modules/ROOT_. Then to decide the order that the new page will appear in the contents page, you can add the filename to the [.path]_nav.adoc_ file in the order you want the page to be in.
 
 == Generate Site
-You can make changes to the repository and view the local changes by generating a local site. After cloning this repository to your computer you can generate a local site by using the command `antora --fetch antora-playbook.yml` within the same directory as the antora playbook. To be able to run the command you need to install antora first. Installation instructions can be found at https://docs.antora.org/antora/latest/install/install-antora/ .
+After making any changes to the components, once you have committed your changes, the Github action [.path]_publish.yml_ runs to build the site and publish your updated changes to the Testify docs site.
 
 == Component
 [.path]_mainComponent_ is the documentation component for the Testify docs site. To add any pages to the docs, then you would create new `.adoc` file within [.path]_mainComponent_/modules/ROOT_. Then to decide the order that the new page will appear in the contents page, you can add the filename to the [.path]_nav.adoc_ file in the order you want the page to be in.

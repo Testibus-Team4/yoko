@@ -13,6 +13,6 @@
 
 Testify is an open-source generic framework used for the testing of Object Request Brokers (ORBs). It is based on an Apache Yoko fork, originally built for OpenLiberty. Yoko is an open-source project maintained by IBM, and is an implementation of an ORB system to carry out interprocess communication.
 
-## Steps to build Testify
+## Docs
 
-1. From the root of the project, run `./gradlew yoko-testify:build`
+The documenation for Testify can be found at https://testibus-team4.github.io/yoko . There you can find out more information about the benefits of Testify and how to use it.

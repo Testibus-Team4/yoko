@@ -7,7 +7,7 @@ This page will give you instructions on how you can run Testify to see how it wo
 +
 [,console]
 ----
-    git clone https://github.com/Testibus-Team4/yoko.git`
+git clone https://github.com/Testibus-Team4/yoko.git`
 ----
 
 . Navigate to the `[.path]_build.gradle_` file, and add the following code to the dependencies section of the file:

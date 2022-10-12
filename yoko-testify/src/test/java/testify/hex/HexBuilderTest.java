@@ -167,3 +167,4 @@ class HexBuilderTest {
         assertEquals(newHexBuildObject.hex().getClass(), String.class);
     }
 }
+

@@ -4,6 +4,5 @@
 ** xref:bus/testify.adoc[]
 ** xref:bus/processes.adoc[]
 * xref:part-runner.adoc[]
-* xref:verbose-framework.adoc[]
 * xref:jul-logging.adoc[]
 * xref:extending-annotations.adoc[]

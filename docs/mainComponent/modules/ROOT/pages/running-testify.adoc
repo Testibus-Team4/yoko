@@ -4,34 +4,61 @@ This page will give you instructions on how you can run Testify to see how it wo
 
 == Steps to build Testify
 . Clone the following Yoko repository
-.. `git clone https://github.com/Testibus-Team4/yoko.git`
-. Navigate to the [.path]_build.gradle_ file, and add the following code to the dependencies section of the file:
-.. `testImplementation 'org.apache.yoko:yoko-testify:1.5.0.9cce293956'`
-. Refresh the [.path]_build.gradle_ file
-. Navigate to [.path]_/src/test/java/com/acme/hello/InitialTest.java_
++
+[,console]
+----
+    git clone https://github.com/Testibus-Team4/yoko.git`
+----
+
+. Navigate to the `[.path]_build.gradle_` file, and add the following code to the dependencies section of the file:
++
+[,java]
+----
+testImplementation 'org.apache.yoko:yoko-testify:1.5.0.9cce293956'
+----
+
+. Refresh the `[.path]_build.gradle_` file
+. Navigate to `[.path]_/src/test/java/com/acme/hello/InitialTest.java_` using the command below from the HelloWorld directory:
++
+[,console]
+----
+ cd /src/test/java/com/acme/hello/InitialTest.java
+----
 . Add the following imports into intitialTest.java:
-.. `import testify.bus.Bus;`
++
+[,java]
+----
+import testify.bus.Bus;
+import testify.bus.TypeSpec;
+import testify.jupiter.annotation.ConfigurePartRunner;
+import testify.parts.PartRunner;
+----
 
-.. `import testify.bus.TypeSpec;`
-
-.. `import testify.jupiter.annotation.ConfigurePartRunner;`
-
-.. `import testify.parts.PartRunner;`
 . You are now ready to build your application using gradle and see how Testify has helped testing. In the root folder of the Yoko repository, run the following commands:
-.. To build *with* tests use: `./gradlew build`
-.. To build *without* tests use: `./gradlew build -x test`
+* To build *with* tests use: 
++
+[,console]
+----
+./gradlew build
+----
+
+* To build *without* tests use: 
++
+[,console]
+----
+./gradlew build -x test`
+----
 
 == How Testify works in intitialTest.java
 
-****
-`import testify.bus.Bus;`
+[,java]
+----
+import testify.bus.Bus;
+import testify.bus.TypeSpec;
+import testify.jupiter.annotation.ConfigurePartRunner;
+import testify.parts.PartRunner;
+----
 
-`import testify.bus.TypeSpec;`
-
-`import testify.jupiter.annotation.ConfigurePartRunner;`
-
-`import testify.parts.PartRunner;`
-****
 These imports enable Testify in your testing. The main annotation we are using from Testify is `@ConfigurePartRunner`. This annoation allows us to make use of `runner.useNewJVMWhenForking()` and `runner.fork()`. These runners allow you to run methods from your app/project within the testing. The `@ConfigurePartRunner` annotation is further explained in https://testibus-team4.github.io/yoko/mainComponent/1.5.0/part-runner.html . 
 
 In intitialTest.java the tests are sending and getting events from methods using the bus (more information about the bus can be found at https://testibus-team4.github.io/yoko/mainComponent/1.5.0/bus/testify.html). Thanks to these events we are making sure that a new instruction is not run until the previous one complete and the correct values are shared across processes/threads. This is done using TypeSpecs which are Testify specific. TypeSpecs are enums that we can call. In this case these are the events. Thanks to these TypeSpecs we are able to know:

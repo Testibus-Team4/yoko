@@ -221,86 +221,121 @@ import testify.parts.PartRunner;</code></pre>
 </div>
 </li>
 <li>
-<p>The above code will call on the <code>PartRunner</code> parameter. This allows us to use the methods within part runner and call on and use <code>useNewJVMWhenForking()</code> and also <code>fork()</code>. <code>useNewJVMWhenForking()</code> name means to use a new Java Virtual Machine every time something is forked. <code>fork()</code> calls upon the <code>runServer()</code> method.
-    System.out.println(port);
-    // Get STOP_REQUESTED event from the bus
-    // call stop method from HelloServer class
-    HelloServer.stop();
-    // Send SERVER_STOPPED event and port back to the client
-    bus.put(SERVER_STOPPED, port);
-}</p>
+<p>The above code will call on the <code>PartRunner</code> parameter. This allows us to use the methods within part runner and call on and use <code>useNewJVMWhenForking()</code> and also <code>fork()</code>. <code>useNewJVMWhenForking()</code> name means to use a new Java Virtual Machine every time something is forked. <code>fork()</code> calls upon the <code>runServer()</code> method.</p>
 </li>
 </ol>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">The above code will call on the `Bus` parameter. This allows us to use the methods within the bus and call on and use `put()` and also `get()`. `put()` will put the `SERVER_STARTED` event and the port number on the bus. `get()` will get the `STOP_REQUESTED` event from the bus. This allows the client and server communicate with each other with more detail. Using Bus also allows us to know how long a server takes to start, when the client starts to interact with the server and also when the server shuts down.
-
-Since you are now able to send events and messages between the client and server; you can send the port across too. This means you can go ahead and replace:
-+
-[java]</code></pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>static int port = 1099;</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">with:
-+
-[,java]</code></pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>static int port;</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">. You are now ready to build your application using gradle and see how Testify has helped testing. In the [.path]_start_` repository, run either of following commands:
-* To build *with* tests use:
-+
-[,console]</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">/gradlew build</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* To build *without* tests use:
-+
-[,console]</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">/gradlew build -x test`</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">== How Testify works in intitialTest.java
-
-[,java]</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    // This method runs in the server process
+    private static void runServer(Bus bus) {
+        logging();
+        int port = HelloServer.start(0);
+        // Notify the test process that the server has now started on a particular port
+        bus.put(SERVER_STARTED, port);
+        System.out.println(port);
+        // Get STOP_REQUESTED event from the bus
+        bus.get(STOP_REQUESTED);
+        // call stop method from HelloServer class
+        HelloServer.stop();
+        // Send SERVER_STOPPED event and port back to the client
+        bus.put(SERVER_STOPPED, port);
+    }</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>import testify.bus.Bus;
-import testify.bus.TypeSpec;
-import testify.jupiter.annotation.ConfigurePartRunner;
-import testify.parts.PartRunner;</p>
+<p>+
+Also now you can go ahead and remove the call for <code>logging()</code> from the <code>testHello()</code> method. This is because you have now called it in the <code>runServer()</code> method.</p>
+</div>
+<div class="paragraph">
+<p>The above code will call on the <code>Bus</code> parameter. This allows us to use the methods within the bus and call on and use <code>put()</code> and also <code>get()</code>. <code>put()</code> will put the <code>SERVER_STARTED</code> event and the port number on the bus. <code>get()</code> will get the <code>STOP_REQUESTED</code> event from the bus. This allows the client and server communicate with each other with more detail. Using Bus also allows us to know how long a server takes to start, when the client starts to interact with the server and also when the server shuts down.</p>
+</div>
+<div class="paragraph">
+<p>Since you are now able to send events and messages between the client and server; you can send the port across too. This means you can go ahead and replace:</p>
+</div>
+<div class="paragraph">
+<p>+</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">These imports enable Testify in your testing. The annotation you using from Testify is `@ConfigurePartRunner`. This annoation allows us to make use of `runner.useNewJVMWhenForking()` and `runner.fork()`. These runners allow you to run methods from your app/project within the testing. The `@ConfigurePartRunner` annotation is further explained in https://testibus-team4.github.io/yoko/mainComponent/1.5.0/part-runner.html .
-
-In intitialTest.java the tests are sending and getting events from methods using the bus (more information about the bus can be found at https://testibus-team4.github.io/yoko/mainComponent/1.5.0/bus/testify.html). Thanks to these events you are making sure that a new instruction is not run until the previous one complete and the correct values are shared across processes/threads. This is done using TypeSpecs which are Testify specific. TypeSpecs are enums that you can call. In this case these are the events. Thanks to these TypeSpecs you are able to know:
-
-    * How long a server took to start (`SERVER_STARTED`)
-    * When the client starts to interact with the server
-    * When the server can shut down (`STOP_REQUESTED`)
-    * When the server shut down (`SERVER_STOPPED`)
-
-This is all done in the setup() method which also is annotated using `@BeforeAll` - this means that nothing will happen until this method is completed. The most important method is runServer() which takes in bus as a parameter. In this method everything is declared and then passed to the setup() method inside the runner.fork() method as a parameter.</code></pre>
+<pre>    static int port = 1099;</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>with:</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    static int port;</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>You are now ready to build your application using gradle and see how Testify has helped testing. In the <em class="path">start</em>` repository, run either of following commands:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To build <strong>with</strong> tests use:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">./gradlew build</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>To build <strong>without</strong> tests use:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">./gradlew build -x test`</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_testify_works_in_intitialtest_java"><a class="anchor" href="#_how_testify_works_in_intitialtest_java"></a>How Testify works in intitialTest.java</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import testify.bus.Bus;
+import testify.bus.TypeSpec;
+import testify.jupiter.annotation.ConfigurePartRunner;
+import testify.parts.PartRunner;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These imports enable Testify in your testing. The annotation you using from Testify is <code>@ConfigurePartRunner</code>. This annoation allows us to make use of <code>runner.useNewJVMWhenForking()</code> and <code>runner.fork()</code>. These runners allow you to run methods from your app/project within the testing. The <code>@ConfigurePartRunner</code> annotation is further explained in <a href="https://testibus-team4.github.io/yoko/mainComponent/1.5.0/part-runner.html" class="bare">https://testibus-team4.github.io/yoko/mainComponent/1.5.0/part-runner.html</a> .</p>
+</div>
+<div class="paragraph">
+<p>In intitialTest.java the tests are sending and getting events from methods using the bus (more information about the bus can be found at <a href="https://testibus-team4.github.io/yoko/mainComponent/1.5.0/bus/testify.html" class="bare">https://testibus-team4.github.io/yoko/mainComponent/1.5.0/bus/testify.html</a>). Thanks to these events you are making sure that a new instruction is not run until the previous one complete and the correct values are shared across processes/threads. This is done using TypeSpecs which are Testify specific. TypeSpecs are enums that you can call. In this case these are the events. Thanks to these TypeSpecs you are able to know:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How long a server took to start (<code>SERVER_STARTED</code>)</p>
+</li>
+<li>
+<p>When the client starts to interact with the server</p>
+</li>
+<li>
+<p>When the server can shut down (<code>STOP_REQUESTED</code>)</p>
+</li>
+<li>
+<p>When the server shut down (<code>SERVER_STOPPED</code>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is all done in the setup() method which also is annotated using <code>@BeforeAll</code> - this means that nothing will happen until this method is completed. The most important method is runServer() which takes in bus as a parameter. In this method everything is declared and then passed to the setup() method inside the runner.fork() method as a parameter.</p>
 </div>
 </div>
 </div>

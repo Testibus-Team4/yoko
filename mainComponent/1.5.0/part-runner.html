@@ -114,49 +114,56 @@
 <div class="sect1">
 <h2 id="_how_to_use_partrunner"><a class="anchor" href="#_how_to_use_partrunner"></a>How to use PartRunner</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Use a new JVM when forking = <code>runner.useNewJVMWhenForking()</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Use a new JVM when forking:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">runner.useNewJVMWhenForking()</code></pre>
 </div>
-<div class="paragraph">
-<p>Use a new thread when forking = <code>runner.fork()</code></p>
+</div>
+</li>
+<li>
+<p>Use a new thread when forking</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">runner.fork()</code></pre>
+</div>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Below is a code example of using the <code>@ConfigurePartRunner</code> annotation:</p>
 </div>
-<div class="sidebarblock">
+<div class="listingblock">
 <div class="content">
-<div class="literalblock">
-<div class="content">
-<pre>@ConfigurePartRunner
-public class InitialTest {
-    static int port;
-    private static String lookupURL;</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>    @BeforeAll
-    static void setup(PartRunner runner) {
-        // When forking use new Java Virtual Machine
-        runner.useNewJVMWhenForking();
-        // Create a new part called HelloServer
-        runner.fork("HelloServer",
-                // Tell Testify how to start this new part
-                InitialTest::runServer,
-                // Tell Testify how to stop this part
-                bus -&gt; bus
-                        // Send a stp request
-                        .put(STOP_REQUESTED, 0)
-                        // Wait for stopped server response
-                        .get(SERVER_STOPPED));
-        // Wait for the server to start
-        port = runner.bus("HelloServer").get(SERVER_STARTED);
-        lookupURL = "//localhost:" + port + "/MessengerService";
-        System.out.println(lookupURL);
-    }
-}</pre>
-</div>
-</div>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    @ConfigurePartRunner
+    public class InitialTest {
+        static int port;
+        private static String lookupURL;
+
+        @BeforeAll
+        static void setup(PartRunner runner) {
+            // When forking use new Java Virtual Machine
+            runner.useNewJVMWhenForking();
+            // Create a new part called HelloServer
+            runner.fork("HelloServer",
+                    // Tell Testify how to start this new part
+                    InitialTest::runServer,
+                    // Tell Testify how to stop this part
+                    bus -&gt; bus
+                            // Send a stp request
+                            .put(STOP_REQUESTED, 0)
+                            // Wait for stopped server response
+                            .get(SERVER_STOPPED));
+            // Wait for the server to start
+            port = runner.bus("HelloServer").get(SERVER_STARTED);
+            lookupURL = "//localhost:" + port + "/MessengerService";
+            System.out.println(lookupURL);
+        }
+    }</code></pre>
 </div>
 </div>
 </div>

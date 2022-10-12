@@ -115,47 +115,40 @@
 <ol class="arabic">
 <li>
 <p>Clone the following Yoko repository</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>git clone <a href="https://github.com/Testibus-Team4/yoko.git" class="bare">https://github.com/Testibus-Team4/yoko.git</a></code></p>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">    git clone https://github.com/Testibus-Team4/yoko.git`</code></pre>
+</div>
 </div>
 </li>
 <li>
-<p>Navigate to the <em class="path">build.gradle</em> file, and add the following code to the dependencies section of the file:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>testImplementation 'org.apache.yoko:yoko-testify:1.5.0.9cce293956'</code></p>
-</li>
-</ul>
+<p>Navigate to the <code><em class="path">build.gradle</em></code> file, and add the following code to the dependencies section of the file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">testImplementation 'org.apache.yoko:yoko-testify:1.5.0.9cce293956'</code></pre>
+</div>
 </div>
 </li>
 <li>
-<p>Refresh the <em class="path">build.gradle</em> file</p>
+<p>Refresh the <code><em class="path">build.gradle</em></code> file</p>
 </li>
 <li>
-<p>Navigate to <em class="path">/src/test/java/com/acme/hello/InitialTest.java</em></p>
+<p>Navigate to <code><em class="path">/src/test/java/com/acme/hello/InitialTest.java</em></code> using the command below from the HelloWorld directory:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> cd /src/test/java/com/acme/hello/InitialTest.java</code></pre>
+</div>
+</div>
 </li>
 <li>
 <p>Add the following imports into intitialTest.java:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>import testify.bus.Bus;</code></p>
-</li>
-<li>
-<p><code>import testify.bus.TypeSpec;</code></p>
-</li>
-<li>
-<p><code>import testify.jupiter.annotation.ConfigurePartRunner;</code></p>
-</li>
-<li>
-<p><code>import testify.parts.PartRunner;</code></p>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import testify.bus.Bus;
+import testify.bus.TypeSpec;
+import testify.jupiter.annotation.ConfigurePartRunner;
+import testify.parts.PartRunner;</code></pre>
+</div>
 </div>
 </li>
 <li>
@@ -163,10 +156,20 @@
 <div class="ulist">
 <ul>
 <li>
-<p>To build <strong>with</strong> tests use: <code>./gradlew build</code></p>
+<p>To build <strong>with</strong> tests use:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">./gradlew build</code></pre>
+</div>
+</div>
 </li>
 <li>
-<p>To build <strong>without</strong> tests use: <code>./gradlew build -x test</code></p>
+<p>To build <strong>without</strong> tests use:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">./gradlew build -x test`</code></pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
@@ -178,20 +181,12 @@
 <div class="sect1">
 <h2 id="_how_testify_works_in_intitialtest_java"><a class="anchor" href="#_how_testify_works_in_intitialtest_java"></a>How Testify works in intitialTest.java</h2>
 <div class="sectionbody">
-<div class="sidebarblock">
+<div class="listingblock">
 <div class="content">
-<div class="paragraph">
-<p><code>import testify.bus.Bus;</code></p>
-</div>
-<div class="paragraph">
-<p><code>import testify.bus.TypeSpec;</code></p>
-</div>
-<div class="paragraph">
-<p><code>import testify.jupiter.annotation.ConfigurePartRunner;</code></p>
-</div>
-<div class="paragraph">
-<p><code>import testify.parts.PartRunner;</code></p>
-</div>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">import testify.bus.Bus;
+import testify.bus.TypeSpec;
+import testify.jupiter.annotation.ConfigurePartRunner;
+import testify.parts.PartRunner;</code></pre>
 </div>
 </div>
 <div class="paragraph">
